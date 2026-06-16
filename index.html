@@ -57,10 +57,11 @@
       display:grid;
       place-items:center;
       text-align:center;
-      padding:32px 20px;
+      padding:28px 18px;
       background:
-        linear-gradient(rgba(255,248,241,.72),rgba(255,242,244,.86)),
-        radial-gradient(circle at 50% 42%, rgba(255,255,255,.76), transparent 42%),
+        radial-gradient(circle at 50% 38%, rgba(255,255,255,.82), transparent 36%),
+        radial-gradient(circle at 14% 16%, rgba(255,221,226,.66), transparent 28%),
+        radial-gradient(circle at 86% 18%, rgba(255,234,205,.72), transparent 30%),
         linear-gradient(180deg,#fff8f1,#fff2f4);
       transition:opacity .9s ease, visibility .9s ease;
     }
@@ -72,44 +73,42 @@
     }
 
     .envelope-stage{
-      width:min(620px,92vw);
-      min-height:680px;
-      border-radius:46% 46% 34px 34px;
-      border:1px solid rgba(216,163,163,.42);
+      width:min(760px,94vw);
+      min-height:min(620px,86vh);
+      border-radius:46% 46% 36px 36px;
+      border:1px solid rgba(216,163,163,.34);
       background:
-        linear-gradient(135deg,rgba(255,255,255,.62),rgba(244,216,216,.56)),
-        repeating-linear-gradient(45deg,rgba(140,92,92,.08) 0 1px,transparent 1px 14px);
-      box-shadow:0 28px 100px rgba(126,82,82,.18);
-      display:flex;
-      flex-direction:column;
-      align-items:center;
-      justify-content:center;
-      padding:54px 28px 42px;
+        linear-gradient(135deg,rgba(255,255,255,.48),rgba(244,216,216,.38)),
+        repeating-linear-gradient(45deg,rgba(140,92,92,.055) 0 1px,transparent 1px 14px);
+      box-shadow:0 28px 100px rgba(126,82,82,.14);
+      display:grid;
+      place-items:center;
+      padding:34px 18px;
       position:relative;
       overflow:hidden;
-      perspective:1200px;
+      perspective:1400px;
     }
 
     .envelope-stage::before{
       content:"";
       position:absolute;
-      inset:24px;
+      inset:22px;
       border:1px solid rgba(255,255,255,.58);
-      border-radius:46% 46% 26px 26px;
+      border-radius:46% 46% 28px 28px;
       pointer-events:none;
     }
 
     .envelope{
-      width:min(340px,76vw);
-      height:220px;
-      margin:34px auto 26px;
+      width:min(560px,86vw);
+      height:360px;
+      margin:0 auto;
       border:0;
       padding:0;
       background:transparent;
       position:relative;
       cursor:pointer;
       transform-style:preserve-3d;
-      filter:drop-shadow(0 24px 34px rgba(126,82,82,.18));
+      filter:drop-shadow(0 28px 42px rgba(126,82,82,.20));
     }
 
     .envelope-back{
@@ -152,30 +151,30 @@
     .envelope-seal{
       position:absolute;
       left:50%;
-      top:48%;
+      top:49%;
       transform:translate(-50%,-50%);
       z-index:6;
-      width:48px;
-      height:48px;
+      width:66px;
+      height:66px;
       border-radius:999px;
       display:grid;
       place-items:center;
       background:linear-gradient(180deg,#d8a3a3,#b97878);
       color:#fff;
-      font-size:25px;
-      box-shadow:0 12px 26px rgba(126,82,82,.18);
+      font-size:32px;
+      box-shadow:0 14px 30px rgba(126,82,82,.22);
       transition:opacity .45s ease, transform .75s cubic-bezier(.22,1,.36,1);
     }
 
     .letter{
       position:absolute;
       left:50%;
-      bottom:20px;
+      bottom:28px;
       transform:translateX(-50%);
       width:82%;
-      height:174px;
+      height:250px;
       z-index:2;
-      border-radius:18px;
+      border-radius:22px;
       background:rgba(255,255,255,.94);
       border:1px solid rgba(216,163,163,.32);
       box-shadow:0 18px 38px rgba(126,82,82,.11);
@@ -189,24 +188,24 @@
 
     .letter-small{
       font-family:'Noto Sans TC',sans-serif;
-      font-size:11px;
-      letter-spacing:.22em;
+      font-size:13px;
+      letter-spacing:.24em;
       color:rgba(111,77,77,.62);
       text-transform:uppercase;
     }
 
     .letter-names{
       font-family:'Great Vibes',cursive;
-      font-size:54px;
+      font-size:76px;
       line-height:1;
       color:#8c5c5c;
-      margin:14px 0 8px;
+      margin:16px 0 8px;
     }
 
     .letter-date{
       font-family:'Noto Sans TC',sans-serif;
-      font-size:12px;
-      letter-spacing:.18em;
+      font-size:13px;
+      letter-spacing:.2em;
       color:rgba(111,77,77,.72);
     }
 
@@ -216,7 +215,7 @@
     }
 
     .enter-screen.opening .letter{
-      transform:translateX(-50%) translateY(-118px) scale(1.06);
+      transform:translateX(-50%) translateY(-178px) scale(1.06);
       z-index:7;
     }
 
@@ -233,72 +232,46 @@
       to{transform:translateY(10px) scale(.98); opacity:.92}
     }
 
-    .enter-names{
-      font-family:'Great Vibes',cursive;
-      font-size:clamp(72px,17vw,124px);
-      line-height:.88;
-      font-weight:400;
-      color:#8c5c5c;
-      margin:8px 0 18px;
-      position:relative;
-      z-index:1;
-    }
-
-    .enter-text{
-      font-size:clamp(18px,4vw,25px);
-      line-height:1.95;
-      letter-spacing:.09em;
-      margin:0;
-      position:relative;
-      z-index:1;
-    }
-
-    .enter-date{
-      margin:16px 0 10px;
-      font-family:'Noto Sans TC',sans-serif;
-      letter-spacing:.22em;
-      color:var(--brown);
-      position:relative;
-      z-index:1;
-    }
-
-    .enter-hint{
-      margin-top:10px;
-      font-family:'Noto Sans TC',sans-serif;
-      font-size:13px;
-      letter-spacing:.12em;
-      color:rgba(111,77,77,.66);
-      animation:pulseText 1.8s ease-in-out infinite;
-      position:relative;
-      z-index:1;
-    }
-
-    @keyframes pulseText{
-      0%,100%{opacity:.58; transform:translateY(0)}
-      50%{opacity:1; transform:translateY(-2px)}
-    }
-
     .music-btn{
       position:fixed;
-      right:18px;
-      bottom:18px;
+      right:22px;
+      bottom:22px;
       z-index:99;
-      border:1px solid rgba(216,163,163,.4);
+      border:1px solid rgba(216,163,163,.34);
       border-radius:999px;
-      padding:12px 16px;
-      background:rgba(255,255,255,.82);
+      padding:13px 18px;
+      background:rgba(255,255,255,.88);
       backdrop-filter:blur(14px);
-      box-shadow:0 14px 34px rgba(126,82,82,.18);
+      box-shadow:0 12px 30px rgba(126,82,82,.16);
       color:#8c5c5c;
+      font-family:'Noto Sans TC',sans-serif;
+      font-size:15px;
       font-weight:700;
       letter-spacing:.04em;
       cursor:pointer;
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      gap:6px;
+      min-width:118px;
+      height:50px;
+      transition:transform .3s ease, box-shadow .3s ease, opacity .3s ease;
+    }
+
+    .music-btn:hover{
+      transform:translateY(-2px);
+      box-shadow:0 16px 36px rgba(126,82,82,.19);
+    }
+
+    .music-btn.playing{
+      box-shadow:0 16px 36px rgba(126,82,82,.19);
     }
 
     .hero{
       min-height:100vh;
-      display:grid;
-      place-items:center;
+      display:flex;
+      align-items:center;
+      justify-content:center;
       text-align:center;
       padding:44px 20px;
       position:relative;
@@ -317,6 +290,13 @@
       z-index:-1;
     }
 
+    .hero-content{
+      width:100%;
+      max-width:1080px;
+      margin:0 auto;
+      text-align:center;
+    }
+
     .tag{
       display:inline-block;
       padding:9px 18px;
@@ -332,15 +312,15 @@
 
     .names{
       font-family:'Great Vibes',cursive;
-      font-size:clamp(70px,12vw,140px);
+      font-size:clamp(72px,11vw,136px);
       line-height:1;
       font-weight:400;
       color:#8c5c5c;
       margin:30px auto 18px;
       text-shadow:0 14px 38px rgba(126,82,82,.14);
-  
       width:100%;
       text-align:center;
+      overflow:visible;
     }
 
     .subtitle{
@@ -818,14 +798,14 @@
     }
 
     @media(max-width:760px){
-      .envelope-stage{min-height:620px}.envelope{width:min(318px,78vw);height:206px}.letter-names{font-size:48px}
+      .envelope-stage{min-height:520px}.envelope{width:min(360px,86vw);height:238px}.letter{height:172px;bottom:20px}.letter-names{font-size:52px}.envelope-seal{width:52px;height:52px;font-size:26px}.enter-screen.opening .letter{transform:translateX(-50%) translateY(-122px) scale(1.05)}
       .section{padding:72px 16px}
       .countdown{grid-template-columns:repeat(2,1fr)}
       .profile-grid,.info-grid{grid-template-columns:1fr}
       .timeline{padding-left:18px}
       .story-item{padding:22px 18px 22px 24px}
       .hero::before{width:370px;height:370px}
-      .names{margin-top:24px}
+      .names{margin-top:24px;font-size:clamp(62px,18vw,92px)}
       .map-wrap{height:260px}
       .gallery-grid{grid-template-columns:1fr}
       .schedule-row{grid-template-columns:74px 1fr}
@@ -836,8 +816,6 @@
 <body class="locked">
   <div class="enter-screen" id="enterScreen">
     <div class="envelope-stage" id="envelopeStage">
-      <div class="enter-tag">OUR WEDDING DAY</div>
-
       <button class="envelope" id="enterBtn" aria-label="開啟婚禮邀請函">
         <div class="letter">
           <div class="letter-small">Wedding Invitation</div>
@@ -849,15 +827,10 @@
         <div class="envelope-front"></div>
         <div class="envelope-seal">♡</div>
       </button>
-
-      <div class="enter-names">Tim & Aries</div>
-      <p class="enter-text">從 Slack 的一則訊息開始，<br>走到了婚禮這一天。</p>
-      <div class="enter-date">2026.12.19</div>
-      <div class="enter-hint">點擊信封開啟邀請函</div>
     </div>
   </div>
 
-  <button class="music-btn" id="musicBtn">♪ 播放音樂</button>
+  <button class="music-btn" id="musicBtn" aria-label="播放音樂">♪ 播放音樂</button>
 
   <!-- 把 0615music.mp3 放在 index.html 同一層 -->
   <audio id="bgMusic" loop preload="auto" playsinline>
@@ -865,7 +838,7 @@
   </audio>
 
   <header class="hero">
-    <div class="fade-up show">
+    <div class="fade-up show hero-content">
       <span class="tag">OUR WEDDING DAY</span>
       <h1 class="names">Tim & Aries</h1>
       <p class="subtitle">從 Slack 的一則訊息開始，<br>走到了婚禮這一天。</p>
@@ -1098,9 +1071,11 @@
         await music.play();
         isPlaying = true;
         musicBtn.textContent = '❚❚ 暫停音樂';
+        musicBtn.classList.add('playing');
       }catch(e){
         isPlaying = false;
-        musicBtn.textContent = '♪ 點我播放音樂';
+        musicBtn.textContent = '♪ 播放音樂';
+        musicBtn.classList.remove('playing');
       }
     }
 
@@ -1123,6 +1098,7 @@
         music.pause();
         isPlaying = false;
         musicBtn.textContent = '♪ 播放音樂';
+        musicBtn.classList.remove('playing');
       }
     });
 

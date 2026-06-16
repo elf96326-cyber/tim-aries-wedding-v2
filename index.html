@@ -1104,6 +1104,46 @@
       .chapter-date{font-size:12px;letter-spacing:.08em}
       .chapter-main p{font-size:14.5px}
       .chapter-body{padding:0 16px 22px}
+
+      /* 手機版倒數區塊精簡 */
+      .section:has(.countdown-card){
+        padding-top:54px;
+        padding-bottom:54px;
+      }
+      .section:has(.countdown-card) .section-title{
+        font-size:28px;
+        margin-bottom:2px;
+      }
+      .section:has(.countdown-card) .section-en{
+        font-size:42px;
+        margin:-8px 0 14px;
+      }
+      .section:has(.countdown-card) .section-sub{
+        max-width:300px;
+        margin:0 auto 24px;
+        font-size:14.5px;
+        line-height:1.9;
+      }
+      .countdown-card{
+        padding:18px 14px;
+        border-radius:30px;
+      }
+      .countdown{
+        grid-template-columns:repeat(4,1fr);
+        gap:8px;
+      }
+      .time-box{
+        padding:14px 4px 12px;
+        border-radius:18px;
+      }
+      .time-box strong{
+        font-size:clamp(25px,8vw,34px);
+      }
+      .time-box span{
+        font-size:9px;
+        letter-spacing:.08em;
+      }
+
     }
   </style>
 </head>
@@ -1137,9 +1177,9 @@
     <div class="fade-up show hero-content">
       <span class="tag">OUR WEDDING DAY</span>
       <h1 class="names">Tim & Aries</h1>
-      <p class="subtitle">從朋友變成家人，<br>從此餘生都是你。</p>
+      <p class="subtitle">從 Slack 的一則訊息開始，<br>走到了婚禮這一天。</p>
       <p class="theme">三生有幸，餘生有你</p>
-      <p class="date">2026.12.19 · Grand Victoria Hotel</p>
+      <p class="date">2026.12.19 · VICTORIA HOTEL TAIPEI</p>
       <div class="hero-photo">婚紗主視覺預留</div>
     </div>
     <div class="scroll">SCROLL</div>
@@ -1177,7 +1217,7 @@
         <div class="profile-name">Tim</div>
         <p class="profile-line">🏹 射手座</p>
         <p class="profile-line">既感性又理性</p>
-        <span class="profile-mini">🍵 綾鷹</span>
+        <span class="profile-mini">☕ 綾鷹</span>
         <span class="profile-mini">🥬 大豆苗</span>
       </article>
 
@@ -1368,7 +1408,7 @@
     <div class="closing glass">
       <h2>聽說要累積三生三世的幸運，<br>才能在人海中遇見對的人。</h2>
       <p>何其有幸，今生能成為彼此最重要的人。<br>2026.12.19，期待與你們相見。</p>
-      <div class="music-note">Music｜特別保留.mp3</div>
+      <div class="music-note">Music｜0615music.mp3</div>
     </div>
   </section>
 

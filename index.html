@@ -71,9 +71,9 @@
       pointer-events:none;
     }
 
-    .enter-card{
-      width:min(560px,92vw);
-      min-height:620px;
+    .envelope-stage{
+      width:min(620px,92vw);
+      min-height:680px;
       border-radius:46% 46% 34px 34px;
       border:1px solid rgba(216,163,163,.42);
       background:
@@ -84,12 +84,13 @@
       flex-direction:column;
       align-items:center;
       justify-content:center;
-      padding:58px 30px 46px;
+      padding:54px 28px 42px;
       position:relative;
       overflow:hidden;
+      perspective:1200px;
     }
 
-    .enter-card::before{
+    .envelope-stage::before{
       content:"";
       position:absolute;
       inset:24px;
@@ -98,27 +99,147 @@
       pointer-events:none;
     }
 
-    .enter-tag{
-      display:inline-block;
-      padding:9px 18px;
-      border:1px solid rgba(197,160,106,.45);
+    .envelope{
+      width:min(340px,76vw);
+      height:220px;
+      margin:34px auto 26px;
+      border:0;
+      padding:0;
+      background:transparent;
+      position:relative;
+      cursor:pointer;
+      transform-style:preserve-3d;
+      filter:drop-shadow(0 24px 34px rgba(126,82,82,.18));
+    }
+
+    .envelope-back{
+      position:absolute;
+      inset:0;
+      border-radius:18px;
+      background:linear-gradient(180deg,#fff7f2,#f6dede);
+      border:1px solid rgba(216,163,163,.45);
+      z-index:1;
+    }
+
+    .envelope-front{
+      position:absolute;
+      inset:0;
+      border-radius:18px;
+      z-index:4;
+      background:
+        linear-gradient(145deg, transparent 49.6%, rgba(216,163,163,.28) 50%, transparent 50.4%),
+        linear-gradient(35deg, transparent 49.6%, rgba(216,163,163,.28) 50%, transparent 50.4%),
+        linear-gradient(180deg, rgba(255,250,246,.96), rgba(245,218,218,.96));
+      clip-path:polygon(0 38%, 50% 72%, 100% 38%, 100% 100%, 0 100%);
+      border:1px solid rgba(216,163,163,.35);
+    }
+
+    .envelope-flap{
+      position:absolute;
+      left:0;
+      top:0;
+      width:100%;
+      height:58%;
+      z-index:5;
+      transform-origin:top center;
+      background:linear-gradient(180deg,#fff8f3,#f2d3d3);
+      clip-path:polygon(0 0,100% 0,50% 100%);
+      border-radius:18px 18px 0 0;
+      transition:transform 1.05s cubic-bezier(.22,1,.36,1);
+      box-shadow:0 10px 20px rgba(126,82,82,.08);
+    }
+
+    .envelope-seal{
+      position:absolute;
+      left:50%;
+      top:48%;
+      transform:translate(-50%,-50%);
+      z-index:6;
+      width:48px;
+      height:48px;
       border-radius:999px;
-      background:rgba(255,255,255,.54);
+      display:grid;
+      place-items:center;
+      background:linear-gradient(180deg,#d8a3a3,#b97878);
+      color:#fff;
+      font-size:25px;
+      box-shadow:0 12px 26px rgba(126,82,82,.18);
+      transition:opacity .45s ease, transform .75s cubic-bezier(.22,1,.36,1);
+    }
+
+    .letter{
+      position:absolute;
+      left:50%;
+      bottom:20px;
+      transform:translateX(-50%);
+      width:82%;
+      height:174px;
+      z-index:2;
+      border-radius:18px;
+      background:rgba(255,255,255,.94);
+      border:1px solid rgba(216,163,163,.32);
+      box-shadow:0 18px 38px rgba(126,82,82,.11);
+      display:flex;
+      flex-direction:column;
+      justify-content:center;
+      align-items:center;
+      transition:transform 1.05s cubic-bezier(.22,1,.36,1), opacity .8s ease;
+      color:#7e5252;
+    }
+
+    .letter-small{
+      font-family:'Noto Sans TC',sans-serif;
+      font-size:11px;
+      letter-spacing:.22em;
+      color:rgba(111,77,77,.62);
+      text-transform:uppercase;
+    }
+
+    .letter-names{
+      font-family:'Great Vibes',cursive;
+      font-size:54px;
+      line-height:1;
+      color:#8c5c5c;
+      margin:14px 0 8px;
+    }
+
+    .letter-date{
       font-family:'Noto Sans TC',sans-serif;
       font-size:12px;
-      letter-spacing:.22em;
-      color:var(--brown);
-      position:relative;
-      z-index:1;
+      letter-spacing:.18em;
+      color:rgba(111,77,77,.72);
+    }
+
+    .enter-screen.opening .envelope-flap{
+      transform:rotateX(178deg);
+      z-index:2;
+    }
+
+    .enter-screen.opening .letter{
+      transform:translateX(-50%) translateY(-118px) scale(1.06);
+      z-index:7;
+    }
+
+    .enter-screen.opening .envelope-seal{
+      opacity:0;
+      transform:translate(-50%,-50%) scale(.4) rotate(20deg);
+    }
+
+    .enter-screen.opening .envelope{
+      animation: envelopeFloat .9s ease .65s forwards;
+    }
+
+    @keyframes envelopeFloat{
+      to{transform:translateY(10px) scale(.98); opacity:.92}
     }
 
     .enter-names{
       font-family:'Great Vibes',cursive;
-      font-size:clamp(78px,18vw,132px);
+      font-size:clamp(72px,17vw,124px);
       line-height:.88;
       font-weight:400;
       color:#8c5c5c;
-      margin:32px 0 20px;
+      margin:8px 0 18px;
       position:relative;
       z-index:1;
     }
@@ -133,7 +254,7 @@
     }
 
     .enter-date{
-      margin:18px 0 36px;
+      margin:16px 0 10px;
       font-family:'Noto Sans TC',sans-serif;
       letter-spacing:.22em;
       color:var(--brown);
@@ -141,19 +262,20 @@
       z-index:1;
     }
 
-    .enter-btn{
-      border:1px solid rgba(216,163,163,.48);
-      border-radius:999px;
-      padding:14px 24px;
-      background:rgba(255,255,255,.76);
-      color:#8c5c5c;
-      box-shadow:0 14px 34px rgba(126,82,82,.16);
+    .enter-hint{
+      margin-top:10px;
       font-family:'Noto Sans TC',sans-serif;
-      font-weight:700;
+      font-size:13px;
       letter-spacing:.12em;
-      cursor:pointer;
+      color:rgba(111,77,77,.66);
+      animation:pulseText 1.8s ease-in-out infinite;
       position:relative;
       z-index:1;
+    }
+
+    @keyframes pulseText{
+      0%,100%{opacity:.58; transform:translateY(0)}
+      50%{opacity:1; transform:translateY(-2px)}
     }
 
     .music-btn{
@@ -693,7 +815,7 @@
     }
 
     @media(max-width:760px){
-      .enter-card{min-height:560px}
+      .envelope-stage{min-height:620px}.envelope{width:min(318px,78vw);height:206px}.letter-names{font-size:48px}
       .section{padding:72px 16px}
       .countdown{grid-template-columns:repeat(2,1fr)}
       .profile-grid,.info-grid{grid-template-columns:1fr}
@@ -710,12 +832,25 @@
 
 <body class="locked">
   <div class="enter-screen" id="enterScreen">
-    <div class="enter-card">
-      <span class="enter-tag">OUR WEDDING DAY</span>
+    <div class="envelope-stage" id="envelopeStage">
+      <div class="enter-tag">OUR WEDDING DAY</div>
+
+      <button class="envelope" id="enterBtn" aria-label="開啟婚禮邀請函">
+        <div class="letter">
+          <div class="letter-small">Wedding Invitation</div>
+          <div class="letter-names">Tim & Aries</div>
+          <div class="letter-date">2026.12.19</div>
+        </div>
+        <div class="envelope-back"></div>
+        <div class="envelope-flap"></div>
+        <div class="envelope-front"></div>
+        <div class="envelope-seal">♡</div>
+      </button>
+
       <div class="enter-names">Tim & Aries</div>
       <p class="enter-text">從 Slack 的一則訊息開始，<br>走到了婚禮這一天。</p>
       <div class="enter-date">2026.12.19</div>
-      <button class="enter-btn" id="enterBtn">♡ 點擊開啟婚禮邀請函 ♡</button>
+      <div class="enter-hint">點擊信封開啟邀請函</div>
     </div>
   </div>
 
@@ -967,9 +1102,13 @@
     }
 
     function openInvitation(){
-      enterScreen.classList.add('hide');
-      document.body.classList.remove('locked');
+      enterScreen.classList.add('opening');
       playMusic();
+
+      setTimeout(() => {
+        enterScreen.classList.add('hide');
+        document.body.classList.remove('locked');
+      }, 1450);
     }
 
     enterBtn.addEventListener('click', openInvitation);

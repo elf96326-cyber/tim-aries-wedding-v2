@@ -13,10 +13,10 @@
     :root{
       --paper:rgba(255,255,255,.74);
       --rose:#a9bccd;
-      --gold:#c8a36a;
+      --gold:#e4b8c9;
       --deep:#4f6070;
-      --brown:#748596;
-      --line:rgba(169,188,205,.34);
+      --brown:#b28ea0;
+      --line:rgba(169,188,205,.30);
       --shadow:0 24px 80px rgba(79,96,112,.13);
     }
 
@@ -26,9 +26,10 @@
       margin:0;
       color:var(--deep);
       background:
-        radial-gradient(circle at 14% 6%, rgba(220,235,246,.76), transparent 28%),
-        radial-gradient(circle at 88% 12%, rgba(255,239,210,.70), transparent 30%),
-        linear-gradient(180deg,#f8fafc 0%,#eef4f8 48%,#fffaf4 100%);
+        radial-gradient(circle at 14% 6%, rgba(220,235,246,.78), transparent 28%),
+        radial-gradient(circle at 88% 12%, rgba(245,210,225,.58), transparent 30%),
+        radial-gradient(circle at 52% 92%, rgba(255,244,248,.72), transparent 34%),
+        linear-gradient(180deg,#f8fbfd 0%,#eef4f8 46%,#fff4f8 100%);
       font-family:'Noto Serif TC','Noto Sans TC',serif;
       overflow-x:hidden;
     }
@@ -59,10 +60,10 @@
       text-align:center;
       padding:28px 18px;
       background:
-        radial-gradient(circle at 50% 38%, rgba(255,255,255,.82), transparent 36%),
+        radial-gradient(circle at 50% 38%, rgba(255,255,255,.84), transparent 36%),
         radial-gradient(circle at 14% 16%, rgba(220,235,246,.74), transparent 28%),
-        radial-gradient(circle at 86% 18%, rgba(255,239,210,.70), transparent 30%),
-        linear-gradient(180deg,#f8fafc,#eef4f8);
+        radial-gradient(circle at 86% 18%, rgba(245,210,225,.58), transparent 30%),
+        linear-gradient(180deg,#f8fbfd,#eef4f8);
       transition:opacity .9s ease, visibility .9s ease;
     }
 
@@ -76,13 +77,13 @@
       width:min(760px,94vw);
       min-height:min(620px,86vh);
       border-radius:46% 46% 36px 36px;
-      border:1px solid rgba(200,163,106,.30);
+      border:1px solid rgba(228,184,201,.42);
       background:
         radial-gradient(circle at 50% 40%, rgba(255,255,255,.62), transparent 42%),
         radial-gradient(circle at 16% 18%, rgba(220,235,246,.58), transparent 30%),
-        radial-gradient(circle at 86% 18%, rgba(255,239,210,.52), transparent 28%),
+        radial-gradient(circle at 86% 18%, rgba(245,210,225,.44), transparent 28%),
         linear-gradient(135deg,rgba(255,255,255,.54),rgba(220,235,246,.44)),
-        repeating-linear-gradient(90deg,rgba(200,163,106,.055) 0 1px,transparent 1px 18px);
+        repeating-linear-gradient(90deg,rgba(228,184,201,.075) 0 1px,transparent 1px 18px);
       box-shadow:0 28px 100px rgba(79,96,112,.14);
       display:grid;
       place-items:center;
@@ -131,7 +132,7 @@
       background:
         linear-gradient(180deg,rgba(255,255,255,.90),rgba(238,246,252,.88)),
         linear-gradient(135deg,rgba(200,163,106,.08),transparent 48%,rgba(169,188,205,.12));
-      border:1px solid rgba(200,163,106,.30);
+      border:1px solid rgba(228,184,201,.42);
       z-index:1;
       box-shadow:inset 0 0 0 1px rgba(255,255,255,.56);
     }
@@ -140,7 +141,7 @@
       content:"";
       position:absolute;
       inset:16px;
-      border:1px solid rgba(200,163,106,.18);
+      border:1px solid rgba(228,184,201,.26);
       border-radius:16px;
       pointer-events:none;
     }
@@ -151,11 +152,11 @@
       border-radius:20px;
       z-index:4;
       background:
-        linear-gradient(145deg, transparent 49.7%, rgba(200,163,106,.28) 50%, transparent 50.3%),
-        linear-gradient(35deg, transparent 49.7%, rgba(200,163,106,.28) 50%, transparent 50.3%),
+        linear-gradient(145deg, transparent 49.7%, rgba(228,184,201,.34) 50%, transparent 50.3%),
+        linear-gradient(35deg, transparent 49.7%, rgba(228,184,201,.34) 50%, transparent 50.3%),
         linear-gradient(180deg, rgba(248,252,255,.96), rgba(220,232,242,.96));
       clip-path:polygon(0 42%, 50% 74%, 100% 42%, 100% 100%, 0 100%);
-      border:1px solid rgba(200,163,106,.24);
+      border:1px solid rgba(228,184,201,.30);
     }
 
     .envelope-flap{
@@ -183,7 +184,7 @@
       transform:translate(-50%,-50%);
       width:70%;
       height:1px;
-      background:linear-gradient(90deg,transparent,rgba(200,163,106,.38),transparent);
+      background:linear-gradient(90deg,transparent,rgba(228,184,201,.44),transparent);
       opacity:.8;
     }
 
@@ -200,12 +201,12 @@
       place-items:center;
       background:
         radial-gradient(circle at 34% 28%, rgba(255,255,255,.30), transparent 30%),
-        linear-gradient(180deg,#d8bb7b,#a98655);
-      color:#fffaf0;
+        linear-gradient(180deg,#f2c8d6,#d99aae);
+      color:#fff8fb;
       font-size:34px;
       font-weight:600;
       line-height:1;
-      text-shadow:0 2px 10px rgba(96,72,35,.28);
+      text-shadow:0 2px 10px rgba(128,72,92,.24);
       box-shadow:0 14px 30px rgba(79,96,112,.20), inset 0 0 0 1px rgba(255,255,255,.34);
       transition:opacity .45s ease, transform .75s cubic-bezier(.22,1,.36,1);
     }
@@ -220,8 +221,8 @@
       z-index:2;
       border-radius:24px;
       background:
-        linear-gradient(180deg,rgba(255,255,255,.96),rgba(255,252,246,.94));
-      border:1px solid rgba(200,163,106,.26);
+        linear-gradient(180deg,rgba(255,255,255,.96),rgba(255,247,250,.94));
+      border:1px solid rgba(228,184,201,.32);
       box-shadow:0 18px 38px rgba(79,96,112,.11);
       display:flex;
       flex-direction:column;
@@ -264,10 +265,10 @@
       z-index:8;
       padding:10px 18px;
       border-radius:999px;
-      border:1px solid rgba(200,163,106,.34);
+      border:1px solid rgba(228,184,201,.46);
       background:rgba(255,255,255,.72);
       backdrop-filter:blur(12px);
-      color:#a98655;
+      color:#d693ad;
       font-family:'Noto Sans TC',sans-serif;
       font-size:15px;
       font-weight:700;
@@ -283,7 +284,7 @@
       width:1px;
       height:24px;
       margin:8px auto -30px;
-      background:linear-gradient(rgba(200,163,106,.70),transparent);
+      background:linear-gradient(rgba(228,184,201,.72),transparent);
     }
 
     @keyframes inviteBreath{
@@ -399,7 +400,7 @@
     .tag{
       display:inline-block;
       padding:9px 18px;
-      border:1px solid rgba(197,160,106,.45);
+      border:1px solid rgba(228,184,201,.48);
       border-radius:999px;
       background:rgba(255,255,255,.54);
       backdrop-filter:blur(10px);
@@ -541,7 +542,7 @@
     .time-box{
       padding:22px 8px;
       border-radius:24px;
-      background:linear-gradient(180deg,rgba(255,250,243,.96),rgba(238,246,252,.92));
+      background:linear-gradient(180deg,rgba(255,246,250,.96),rgba(238,246,252,.92));
       border:1px solid rgba(255,255,255,.86);
       transform:translateZ(0);
       transition:transform .45s cubic-bezier(.22,1,.36,1),box-shadow .45s ease;
@@ -749,6 +750,211 @@
       font-weight:300;
     }
 
+
+    .story-book{
+      max-width:900px;
+      margin:0 auto;
+      display:grid;
+      gap:24px;
+    }
+
+    .chapter-card{
+      overflow:hidden;
+      border-radius:34px;
+      border:1px solid rgba(228,184,201,.42);
+      background:
+        linear-gradient(90deg,rgba(238,246,252,.66) 0 34%,rgba(255,246,250,.70) 34% 100%);
+      box-shadow:var(--shadow);
+      backdrop-filter:blur(16px);
+      transition:transform .35s ease, box-shadow .35s ease;
+    }
+
+    .chapter-card:hover{
+      transform:translateY(-2px);
+      box-shadow:0 28px 86px rgba(79,96,112,.16);
+    }
+
+    .chapter-head{
+      width:100%;
+      border:0;
+      background:transparent;
+      padding:0;
+      display:grid;
+      grid-template-columns:34% 1fr;
+      align-items:stretch;
+      text-align:left;
+      color:inherit;
+      cursor:pointer;
+      font-family:inherit;
+    }
+
+    .chapter-visual{
+      min-height:230px;
+      display:grid;
+      place-items:center;
+      padding:26px;
+      background:
+        radial-gradient(circle at 30% 30%,rgba(255,255,255,.72),transparent 32%),
+        radial-gradient(circle at 78% 82%,rgba(228,184,201,.18),transparent 24%),
+        linear-gradient(135deg,rgba(255,255,255,.56),rgba(220,235,246,.68)),
+        repeating-linear-gradient(45deg,rgba(79,96,112,.05) 0 1px,transparent 1px 14px);
+      border-right:1px solid rgba(228,184,201,.28);
+    }
+
+    .chapter-photo{
+      width:min(210px,86%);
+      aspect-ratio:4/3;
+      transform:rotate(-3deg);
+      border:10px solid rgba(255,255,255,.92);
+      border-bottom-width:28px;
+      background:
+        linear-gradient(135deg,rgba(255,255,255,.72),rgba(238,246,252,.78)),
+        repeating-linear-gradient(45deg,rgba(79,96,112,.07) 0 1px,transparent 1px 12px);
+      box-shadow:0 18px 32px rgba(79,96,112,.16);
+      display:grid;
+      place-items:center;
+      text-align:center;
+      position:relative;
+    }
+
+    .chapter-card:nth-child(2) .chapter-photo{transform:rotate(2.5deg)}
+    .chapter-card:nth-child(3) .chapter-photo{transform:rotate(-1.5deg)}
+
+    .chapter-photo::before{
+      content:"";
+      position:absolute;
+      top:-22px;
+      left:50%;
+      width:72px;
+      height:24px;
+      transform:translateX(-50%) rotate(2deg);
+      background:rgba(244,214,225,.72);
+      box-shadow:0 4px 10px rgba(79,96,112,.08);
+    }
+
+    .chapter-photo span{
+      font-family:'Noto Sans TC',sans-serif;
+      font-size:13px;
+      letter-spacing:.18em;
+      color:rgba(79,96,112,.52);
+    }
+
+    .chapter-photo small{
+      position:absolute;
+      left:0;
+      right:0;
+      bottom:-23px;
+      font-family:'Noto Sans TC',sans-serif;
+      font-size:11px;
+      letter-spacing:.08em;
+      color:rgba(79,96,112,.50);
+    }
+
+    .chapter-main{
+      padding:34px 34px 30px;
+      display:flex;
+      flex-direction:column;
+      justify-content:center;
+    }
+
+    .chapter-kicker{
+      font-family:'Noto Sans TC',sans-serif;
+      font-size:12px;
+      letter-spacing:.24em;
+      color:var(--gold);
+      font-weight:700;
+      margin-bottom:10px;
+    }
+
+    .chapter-main h3{
+      margin:0;
+      font-size:clamp(34px,6vw,52px);
+      letter-spacing:.18em;
+      color:#4f6070;
+      font-weight:500;
+      line-height:1.15;
+    }
+
+    .chapter-date{
+      margin-top:18px;
+      font-family:'Noto Sans TC',sans-serif;
+      font-size:14px;
+      letter-spacing:.12em;
+      color:rgba(79,96,112,.72);
+    }
+
+    .chapter-main p{
+      margin:16px 0 0;
+      line-height:1.9;
+      color:rgba(58,72,84,.78);
+      font-size:15.5px;
+      font-weight:300;
+    }
+.chapter-expand{
+  padding:0 0 24px;
+  text-align:center;
+}
+.chapter-bottom-toggle{
+  border:1px solid rgba(228,184,201,.58);
+  background:rgba(255,255,255,.88);
+  color:#d693ad;
+  border-radius:999px;
+  padding:12px 32px;
+  font-family:'Noto Sans TC',sans-serif;
+  font-size:14px;
+  font-weight:700;
+  letter-spacing:.08em;
+  cursor:pointer;
+  box-shadow:0 8px 20px rgba(79,96,112,.08);
+  transition:transform .3s ease, background .3s ease, box-shadow .3s ease;
+}
+.chapter-bottom-toggle:hover{
+  transform:translateY(-2px);
+  box-shadow:0 12px 26px rgba(79,96,112,.12);
+}
+.chapter-card.open .chapter-bottom-toggle{
+  background:rgba(255,246,250,.94);
+}
+
+.chapter-body{
+      display:none;
+      padding:4px 28px 30px;
+      background:linear-gradient(180deg,rgba(255,255,255,.30),rgba(255,255,255,.58));
+    }
+
+    .chapter-card.open .chapter-body{
+      display:grid;
+      gap:16px;
+      animation:chapterOpen .35s ease both;
+    }
+
+    @keyframes chapterOpen{
+      from{opacity:0;transform:translateY(-8px)}
+      to{opacity:1;transform:translateY(0)}
+    }
+
+    .story-book .story-item{
+      margin:0;
+      padding:22px 22px 22px 24px;
+      border-radius:24px;
+      background:rgba(255,255,255,.74);
+      border:1px solid rgba(169,188,205,.24);
+      box-shadow:0 10px 28px rgba(79,96,112,.06);
+    }
+
+    .story-book .story-item::before{
+      display:none;
+    }
+
+    .story-book .story-title{
+      font-size:19px;
+    }
+
+    .story-book .story-text{
+      font-size:15px;
+    }
+
+
     .info-card{padding:28px}
 
     .info-grid{
@@ -830,8 +1036,8 @@
     .gallery-grid{
       display:grid;
       grid-template-columns:repeat(3,1fr);
-      gap:16px;
-      max-width:920px;
+      gap:20px;
+      max-width:840px;
       margin:0 auto;
     }
 
@@ -908,6 +1114,17 @@
       .map-wrap{height:260px}
       .gallery-grid{grid-template-columns:1fr}
       .schedule-row{grid-template-columns:74px 1fr}
+
+      .story-book{gap:18px}
+      .chapter-card{border-radius:28px;background:rgba(255,255,255,.74)}
+      .chapter-head{grid-template-columns:1fr 58px}
+      .chapter-visual{grid-column:1 / -1;min-height:auto;padding:22px 20px 0;border-right:0;background:transparent}
+      .chapter-photo{width:min(230px,78vw);max-width:100%;margin:0 auto 2px}
+      .chapter-main{padding:22px 20px 24px}
+      .chapter-main h3{font-size:34px}
+      .chapter-date{font-size:12px;letter-spacing:.08em}
+      .chapter-main p{font-size:14.5px}
+      .chapter-body{padding:0 16px 22px}
     }
   </style>
 </head>
@@ -999,63 +1216,121 @@
   <section class="section fade-up">
     <h2 class="section-title">我們的故事</h2>
     <div class="section-en">Our Story</div>
-    <p class="section-sub">從一次看不太懂的需求開始，慢慢變成一輩子的約定。</p>
+    <p class="section-sub">把我們的故事收進三個章節裡，想慢慢看的人，可以一頁一頁打開。</p>
 
-    <div class="photo-placeholder">故事區照片預留<br>之後可放日常照 / 旅行照 / 求婚照</div>
+    <div class="story-book">
+      <article class="chapter-card">
+        <button class="chapter-head" type="button" aria-expanded="false">
+          
+          <div class="chapter-visual">
+            <div class="chapter-photo">
+              <span>PHOTO</span>
+              <small>相遇照片預留</small>
+            </div>
+          </div>
+          <div class="chapter-main">
+            <div class="chapter-kicker">CHAPTER 1</div>
+            <h3>相遇</h3>
+            <div class="chapter-date">2022.07.28 — 2022.08.24</div>
+            <p>從一則看不太懂的 Slack 訊息開始，我們慢慢走進彼此的生活。</p>
+          </div>
+          </button>
 
-    <div class="timeline">
-      <article class="story-item">
-        <div class="story-date">2022.07.28</div>
-        <div class="story-title">💌 緣起</div>
-        <p class="story-text">Tim 發信到 Aries 部門信箱提出需求問題，但 Aries 實在看不太懂 Tim 到底想表達什麼，只好透過 Slack 私訊詢問。原本只是工作上的對話，卻意外成為故事的開端。</p>
+        <div class="chapter-expand"><button class="chapter-bottom-toggle" type="button">♡ 點擊展開 ♡</button></div><div class="chapter-body">
+          <article class="story-item">
+            <div class="story-date">2022.07.28</div>
+            <div class="story-title">💌 緣起</div>
+            <p class="story-text">Tim 發信到 Aries 部門信箱提出需求問題，但 Aries 實在看不太懂 Tim 到底想表達什麼，只好透過 Slack 私訊詢問。原本只是工作上的對話，卻意外成為故事的開端。</p>
+          </article>
+
+          <article class="story-item">
+            <div class="story-date">2022.08.04</div>
+            <div class="story-title">🌱 從同事變成朋友</div>
+            <p class="story-text">閒聊了一段時間後，發現我們彼此個性超級合，很快就變得很熟，而 Tim 鼓起勇氣主動向 Aries 要 Line。那一天開始，兩人的聊天不再只是工作，也慢慢走進了彼此的生活裡。</p>
+          </article>
+
+          <article class="story-item">
+            <div class="story-date">2022.08.24</div>
+            <div class="story-title">📷 慢慢靠近的日常</div>
+            <p class="story-text">Tim 跟 Aries 要了 IG，想更認識生活中的彼此。從限時動態到日常分享，距離也在不知不覺中慢慢拉近。</p>
+          </article>
+        </div>
       </article>
 
-      <article class="story-item">
-        <div class="story-date">2022.08.04</div>
-        <div class="story-title">🌱 從同事變成朋友</div>
-        <p class="story-text">閒聊了一段時間後，發現我們彼此個性超級合，很快就變得很熟，而 Tim 鼓起勇氣主動向 Aries 要 Line。那一天開始，兩人的聊天不再只是工作，也慢慢走進了彼此的生活裡。</p>
+      <article class="chapter-card">
+        <button class="chapter-head" type="button" aria-expanded="false">
+          
+          <div class="chapter-visual">
+            <div class="chapter-photo">
+              <span>PHOTO</span>
+              <small>靠近照片預留</small>
+            </div>
+          </div>
+          <div class="chapter-main">
+            <div class="chapter-kicker">CHAPTER 2</div>
+            <h3>靠近</h3>
+            <div class="chapter-date">2024.01.27 — 2024.02.09</div>
+            <p>原本只是朋友，卻在一次次陪伴中變得越來越重要。</p>
+          </div>
+          </button>
+
+        <div class="chapter-expand"><button class="chapter-bottom-toggle" type="button">♡ 點擊展開 ♡</button></div><div class="chapter-body">
+          <article class="story-item">
+            <div class="story-date">2024.01.27</div>
+            <div class="story-title">🎵 一起出去玩</div>
+            <p class="story-text">第一次就一起衝去高雄追 Super Junior！在演唱會的熱血與感動裡，留下了屬於我們的重要回憶。此時的我們還不知道，這次旅遊已在彼此心中留下了伏筆。</p>
+          </article>
+
+          <article class="story-item">
+            <div class="story-date">2024.02.02</div>
+            <div class="story-title">🚗 交新車</div>
+            <p class="story-text">Tim 邀請 Aries 陪他去交新車，也順便陪著 Aries 散散心，排解心理壓力。幸福有時候，就是有人願意在需要被陪伴的時候，安靜地待在身邊。</p>
+          </article>
+
+          <article class="story-item">
+            <div class="story-date">2024.02.09</div>
+            <div class="story-title">💗 跨越距離的告白</div>
+            <p class="story-text">Aries 和家人去日本過年時，Tim 特地學了韓文告白。雖然隔著距離，卻還是讓 Aries 感動到不行。那一刻，心意比任何話都還要真實。</p>
+          </article>
+        </div>
       </article>
 
-      <article class="story-item">
-        <div class="story-date">2022.08.24</div>
-        <div class="story-title">📷 慢慢靠近的日常</div>
-        <p class="story-text">Tim 跟 Aries 要了 IG，想更認識生活中的彼此。從限時動態到日常分享，距離也在不知不覺中慢慢拉近。</p>
-      </article>
+      <article class="chapter-card">
+        <button class="chapter-head" type="button" aria-expanded="false">
+          
+          <div class="chapter-visual">
+            <div class="chapter-photo">
+              <span>PHOTO</span>
+              <small>約定照片預留</small>
+            </div>
+          </div>
+          <div class="chapter-main">
+            <div class="chapter-kicker">CHAPTER 3</div>
+            <h3>約定</h3>
+            <div class="chapter-date">2025.03.22 — 2026.12.19</div>
+            <p>從一句告白開始，到一個關於未來的承諾。</p>
+          </div>
+          </button>
 
-      <article class="story-item">
-        <div class="story-date">2024.01.27</div>
-        <div class="story-title">🎵 一起出去玩</div>
-        <p class="story-text">第一次就一起衝去高雄追 Super Junior！在演唱會的熱血與感動裡，留下了屬於我們的重要回憶。此時的我們還不知道，這次旅遊已在彼此心中留下了伏筆。</p>
-      </article>
+        <div class="chapter-expand"><button class="chapter-bottom-toggle" type="button">♡ 點擊展開 ♡</button></div><div class="chapter-body">
+          <article class="story-item">
+            <div class="story-date">2025.03.22</div>
+            <div class="story-title">💍 求婚</div>
+            <p class="story-text">Tim 偷偷準備了很久，精心安排了專屬於我們的求婚橋段。在滿滿驚喜與感動中，正式向 Aries 求婚。那一天，我們決定牽著彼此的手，一起走向未來。</p>
+          </article>
 
-      <article class="story-item">
-        <div class="story-date">2024.02.02</div>
-        <div class="story-title">🚗 交新車</div>
-        <p class="story-text">Tim 邀請 Aries 陪他去交新車，也順便陪著 Aries 散散心，排解心理壓力。幸福有時候，就是有人願意在需要被陪伴的時候，安靜地待在身邊。</p>
-      </article>
+          <article class="story-item">
+            <div class="story-date">2026.10.14</div>
+            <div class="story-title">🤍 我們要訂婚了</div>
+            <p class="story-text">經過許多甜甜的時光與小考驗，我們決定在這一天訂下彼此。這不只是承諾，更是對未來生活的期待與信心。</p>
+          </article>
 
-      <article class="story-item">
-        <div class="story-date">2024.02.09</div>
-        <div class="story-title">💗 跨越距離的告白</div>
-        <p class="story-text">Aries 和家人去日本過年時，Tim 特地學了韓文告白。雖然隔著距離，卻還是讓 Aries 感動到不行。那一刻，心意比任何話都還要真實。</p>
-      </article>
-
-      <article class="story-item">
-        <div class="story-date">2025.03.22</div>
-        <div class="story-title">💍 求婚</div>
-        <p class="story-text">Tim 偷偷準備了很久，精心安排了專屬於我們的求婚橋段。在滿滿驚喜與感動中，正式向 Aries 求婚。那一天，我們決定牽著彼此的手，一起走向未來。</p>
-      </article>
-
-      <article class="story-item">
-        <div class="story-date">2026.10.14</div>
-        <div class="story-title">🤍 我們要訂婚了</div>
-        <p class="story-text">經過許多甜甜的時光與小考驗，我們決定在這一天訂下彼此。這不只是承諾，更是對未來生活的期待與信心。</p>
-      </article>
-
-      <article class="story-item">
-        <div class="story-date">2026.12.19</div>
-        <div class="story-title">🩷 婚禮見</div>
-        <p class="story-text">這一天，我們將在親朋好友的見證下，一起走進人生新的階段。謝謝一路陪伴著我們的你們，我們的幸福，也因為你們而更加完整。</p>
+          <article class="story-item">
+            <div class="story-date">2026.12.19</div>
+            <div class="story-title">🩷 婚禮見</div>
+            <p class="story-text">這一天，我們將在親朋好友的見證下，一起走進人生新的階段。謝謝一路陪伴著我們的你們，我們的幸福，也因為你們而更加完整。</p>
+          </article>
+        </div>
       </article>
     </div>
   </section>
@@ -1101,15 +1376,12 @@
   <section class="section fade-up">
     <h2 class="section-title">照片預留</h2>
     <div class="section-en">Gallery</div>
-    <p class="section-sub">之後把婚紗照或日常照給我，我會直接放進這些位置。</p>
+    <p class="section-sub">之後可以放三張最想讓大家看到的婚紗照、日常照或求婚照。</p>
 
     <div class="gallery-grid">
       <div class="photo-placeholder">PHOTO 01</div>
       <div class="photo-placeholder">PHOTO 02</div>
       <div class="photo-placeholder">PHOTO 03</div>
-      <div class="photo-placeholder">PHOTO 04</div>
-      <div class="photo-placeholder">PHOTO 05</div>
-      <div class="photo-placeholder">PHOTO 06</div>
     </div>
   </section>
 
@@ -1210,6 +1482,37 @@
 
     document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
 
+
+    function syncChapterButtons(){
+      document.querySelectorAll('.chapter-card').forEach(item => {
+        const isOpen = item.classList.contains('open');
+        const head = item.querySelector('.chapter-head');
+        const toggle = item.querySelector('.chapter-bottom-toggle');
+        if(head) head.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+        if(toggle) toggle.textContent = isOpen ? '♡ 收起故事 ♡' : '♡ 點擊展開 ♡';
+      });
+    }
+
+    document.querySelectorAll('.chapter-head, .chapter-bottom-toggle').forEach(button => {
+      button.addEventListener('click', () => {
+        const card = button.closest('.chapter-card');
+        const isOpen = card.classList.contains('open');
+
+        document.querySelectorAll('.chapter-card').forEach(item => {
+          item.classList.remove('open');
+        });
+
+        if(!isOpen){
+          card.classList.add('open');
+        }
+
+        syncChapterButtons();
+      });
+    });
+
+    syncChapterButtons();
+
+
     function createHeart(){
       if(document.body.classList.contains('locked')) return;
       const heart = document.createElement('div');
@@ -1223,6 +1526,19 @@
     }
 
     setInterval(createHeart, 1200);
+
+if ('scrollRestoration' in history) {
+  history.scrollRestoration = 'manual';
+}
+
+window.addEventListener('beforeunload', () => {
+  window.scrollTo(0, 0);
+});
+
+window.addEventListener('load', () => {
+  setTimeout(() => window.scrollTo(0,0), 10);
+});
+
   </script>
 </body>
 </html>

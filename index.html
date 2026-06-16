@@ -564,6 +564,40 @@
       text-align:center;
     }
 
+
+    .love-card{
+      position:relative;
+      overflow:hidden;
+    }
+
+    .love-watermark{
+      position:absolute;
+      inset:0;
+      z-index:0;
+      background-image:url("./love-watermark.jpg");
+      background-size:cover;
+      background-position:center;
+      opacity:.08;
+      filter:grayscale(20%) blur(.2px);
+      pointer-events:none;
+    }
+
+    .love-card::after{
+      content:"";
+      position:absolute;
+      inset:0;
+      z-index:0;
+      background:
+        linear-gradient(180deg,rgba(255,255,255,.70),rgba(255,246,250,.76));
+      pointer-events:none;
+    }
+
+    .love-card > *:not(.love-watermark){
+      position:relative;
+      z-index:1;
+    }
+
+
     .love-label{
       font-family:'Noto Sans TC',sans-serif;
       letter-spacing:.18em;
@@ -1190,6 +1224,7 @@
     <div class="section-en">Love Days</div>
     <p class="section-sub">從 2024.02.09 那天開始，我們一起把日子過成故事。</p>
     <div class="love-card glass">
+      <div class="love-watermark" aria-hidden="true"></div>
       <div class="love-label">WE HAVE BEEN IN LOVE FOR</div>
       <strong id="loveDays">0</strong>
       <span>DAYS</span>

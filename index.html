@@ -11,11 +11,8 @@
 
   <style>
     :root{
-      --bg:#fff8f2;
       --paper:rgba(255,255,255,.72);
-      --cream:#fffaf4;
       --rose:#d8a3a3;
-      --rose2:#f4d8d8;
       --gold:#c5a06a;
       --deep:#6f4d4d;
       --brown:#8b6258;
@@ -36,6 +33,8 @@
       overflow-x:hidden;
     }
 
+    body.locked{overflow:hidden}
+
     body::before{
       content:"";
       position:fixed;
@@ -50,6 +49,112 @@
     }
 
     a{color:inherit}
+
+    .enter-screen{
+      position:fixed;
+      inset:0;
+      z-index:200;
+      display:grid;
+      place-items:center;
+      text-align:center;
+      padding:32px 20px;
+      background:
+        linear-gradient(rgba(255,248,241,.72),rgba(255,242,244,.86)),
+        radial-gradient(circle at 50% 42%, rgba(255,255,255,.76), transparent 42%),
+        linear-gradient(180deg,#fff8f1,#fff2f4);
+      transition:opacity .9s ease, visibility .9s ease;
+    }
+
+    .enter-screen.hide{
+      opacity:0;
+      visibility:hidden;
+      pointer-events:none;
+    }
+
+    .enter-card{
+      width:min(560px,92vw);
+      min-height:620px;
+      border-radius:46% 46% 34px 34px;
+      border:1px solid rgba(216,163,163,.42);
+      background:
+        linear-gradient(135deg,rgba(255,255,255,.62),rgba(244,216,216,.56)),
+        repeating-linear-gradient(45deg,rgba(140,92,92,.08) 0 1px,transparent 1px 14px);
+      box-shadow:0 28px 100px rgba(126,82,82,.18);
+      display:flex;
+      flex-direction:column;
+      align-items:center;
+      justify-content:center;
+      padding:58px 30px 46px;
+      position:relative;
+      overflow:hidden;
+    }
+
+    .enter-card::before{
+      content:"";
+      position:absolute;
+      inset:24px;
+      border:1px solid rgba(255,255,255,.58);
+      border-radius:46% 46% 26px 26px;
+      pointer-events:none;
+    }
+
+    .enter-tag{
+      display:inline-block;
+      padding:9px 18px;
+      border:1px solid rgba(197,160,106,.45);
+      border-radius:999px;
+      background:rgba(255,255,255,.54);
+      font-family:'Noto Sans TC',sans-serif;
+      font-size:12px;
+      letter-spacing:.22em;
+      color:var(--brown);
+      position:relative;
+      z-index:1;
+    }
+
+    .enter-names{
+      font-family:'Great Vibes',cursive;
+      font-size:clamp(78px,18vw,132px);
+      line-height:.88;
+      font-weight:400;
+      color:#8c5c5c;
+      margin:32px 0 20px;
+      position:relative;
+      z-index:1;
+    }
+
+    .enter-text{
+      font-size:clamp(18px,4vw,25px);
+      line-height:1.95;
+      letter-spacing:.09em;
+      margin:0;
+      position:relative;
+      z-index:1;
+    }
+
+    .enter-date{
+      margin:18px 0 36px;
+      font-family:'Noto Sans TC',sans-serif;
+      letter-spacing:.22em;
+      color:var(--brown);
+      position:relative;
+      z-index:1;
+    }
+
+    .enter-btn{
+      border:1px solid rgba(216,163,163,.48);
+      border-radius:999px;
+      padding:14px 24px;
+      background:rgba(255,255,255,.76);
+      color:#8c5c5c;
+      box-shadow:0 14px 34px rgba(126,82,82,.16);
+      font-family:'Noto Sans TC',sans-serif;
+      font-weight:700;
+      letter-spacing:.12em;
+      cursor:pointer;
+      position:relative;
+      z-index:1;
+    }
 
     .music-btn{
       position:fixed;
@@ -252,9 +357,7 @@
       transition:transform .55s cubic-bezier(.22,1,.36,1),opacity .55s ease,filter .55s ease;
     }
 
-    .time-box strong{
-      font-size:clamp(30px,7vw,52px);
-    }
+    .time-box strong{font-size:clamp(30px,7vw,52px)}
 
     .time-box span,
     .love-card span{
@@ -285,9 +388,7 @@
       margin-bottom:12px;
     }
 
-    .love-card strong{
-      font-size:clamp(52px,12vw,90px);
-    }
+    .love-card strong{font-size:clamp(52px,12vw,90px)}
 
     .profile-grid{
       display:grid;
@@ -348,11 +449,7 @@
       margin:0 0 22px;
     }
 
-    .profile-line{
-      margin:12px 0;
-      font-size:17px;
-      letter-spacing:.06em;
-    }
+    .profile-line{margin:12px 0;font-size:17px;letter-spacing:.06em}
 
     .profile-mini{
       display:inline-flex;
@@ -448,9 +545,7 @@
       font-weight:300;
     }
 
-    .info-card{
-      padding:28px;
-    }
+    .info-card{padding:28px}
 
     .info-grid{
       display:grid;
@@ -497,10 +592,7 @@
       font-size:18px;
     }
 
-    .schedule-text{
-      font-size:17px;
-      letter-spacing:.04em;
-    }
+    .schedule-text{font-size:17px;letter-spacing:.04em}
 
     .venue-address{
       font-family:'Noto Sans TC',sans-serif;
@@ -517,12 +609,7 @@
       border:1px solid rgba(216,163,163,.28);
     }
 
-    .map-wrap iframe{
-      width:100%;
-      height:100%;
-      border:0;
-      display:block;
-    }
+    .map-wrap iframe{width:100%;height:100%;border:0;display:block}
 
     .map-link{
       display:inline-flex;
@@ -589,10 +676,7 @@
       transition:opacity .8s ease,transform .8s ease;
     }
 
-    .fade-up.show{
-      opacity:1;
-      transform:translateY(0);
-    }
+    .fade-up.show{opacity:1;transform:translateY(0)}
 
     .heart{
       position:fixed;
@@ -609,6 +693,7 @@
     }
 
     @media(max-width:760px){
+      .enter-card{min-height:560px}
       .section{padding:72px 16px}
       .countdown{grid-template-columns:repeat(2,1fr)}
       .profile-grid,.info-grid{grid-template-columns:1fr}
@@ -623,11 +708,21 @@
   </style>
 </head>
 
-<body>
+<body class="locked">
+  <div class="enter-screen" id="enterScreen">
+    <div class="enter-card">
+      <span class="enter-tag">OUR WEDDING DAY</span>
+      <div class="enter-names">Tim & Aries</div>
+      <p class="enter-text">從 Slack 的一則訊息開始，<br>走到了婚禮這一天。</p>
+      <div class="enter-date">2026.12.19</div>
+      <button class="enter-btn" id="enterBtn">♡ 點擊開啟婚禮邀請函 ♡</button>
+    </div>
+  </div>
+
   <button class="music-btn" id="musicBtn">♪ 播放音樂</button>
 
   <!-- 把 0615music.mp3 放在 index.html 同一層 -->
-  <audio id="bgMusic" loop preload="auto" autoplay playsinline>
+  <audio id="bgMusic" loop preload="auto" playsinline>
     <source src="./0615music.mp3" type="audio/mpeg">
   </audio>
 
@@ -855,6 +950,8 @@
 
     const music = document.getElementById('bgMusic');
     const musicBtn = document.getElementById('musicBtn');
+    const enterScreen = document.getElementById('enterScreen');
+    const enterBtn = document.getElementById('enterBtn');
     let isPlaying = false;
 
     async function playMusic(){
@@ -869,6 +966,14 @@
       }
     }
 
+    function openInvitation(){
+      enterScreen.classList.add('hide');
+      document.body.classList.remove('locked');
+      playMusic();
+    }
+
+    enterBtn.addEventListener('click', openInvitation);
+
     musicBtn.addEventListener('click', async () => {
       if(!isPlaying){
         await playMusic();
@@ -879,15 +984,6 @@
       }
     });
 
-    window.addEventListener('load', () => {
-      playMusic();
-      setTimeout(playMusic, 600);
-    });
-
-    document.addEventListener('pointerdown', () => {
-      if(!isPlaying) playMusic();
-    }, {once:true});
-
     const observer = new IntersectionObserver(entries => {
       entries.forEach(entry => {
         if(entry.isIntersecting) entry.target.classList.add('show');
@@ -897,6 +993,7 @@
     document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
 
     function createHeart(){
+      if(document.body.classList.contains('locked')) return;
       const heart = document.createElement('div');
       heart.className = 'heart';
       heart.textContent = Math.random() > .5 ? '♡' : '♥';

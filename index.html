@@ -1135,7 +1135,11 @@
       margin:0;
       border-radius:28px;
     }
-
+    
+    .gallery-hint{
+    display:none;
+    }
+    
     .closing{
       max-width:780px;
       margin:0 auto;
@@ -1211,9 +1215,11 @@
       .traffic-info{grid-template-columns:1fr}
       .traffic-item{padding:15px 14px}
       .traffic-item p{font-size:13.5px}
-      .gallery-grid{grid-template-columns:1fr}
+      .gallery-grid{ display:flex; gap:16px;overflow-x:auto;overflow-y:hidden;scroll-snap-type:x mandatory;-webkit-overflow-scrolling:touch;padding-bottom:10px;}
+      .gallery-grid::-webkit-scrollbar{display:none;}
+      .gallery-grid .photo-placeholder{flex:0 0 82%;aspect-ratio:3/4;scroll-snap-align:center;}
+      .gallery-hint{display:block;text-align:center;font-size:13px;color:rgba(79,96,112,.55);margin-bottom:18px;letter-spacing:.05em;}
       .schedule-row{grid-template-columns:74px 1fr}
-
       .story-book{gap:18px}
       .chapter-card{border-radius:28px;background:rgba(255,255,255,.74)}
       .chapter-head{grid-template-columns:1fr 58px}
@@ -1533,6 +1539,10 @@
     <div class="section-en">Gallery</div>
     <p class="section-sub">之後可以放三張最想讓大家看到的婚紗照、日常照或求婚照。</p>
 
+    <p class="gallery-hint">
+    ← 左右滑動查看更多照片 →
+  </p>
+    
     <div class="gallery-grid">
       <div class="photo-placeholder">PHOTO 01</div>
       <div class="photo-placeholder">PHOTO 02</div>

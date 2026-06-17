@@ -1024,6 +1024,14 @@
 
     .schedule-text{font-size:17px;letter-spacing:.04em}
 
+    .schedule-note{
+  margin-top:18px;
+  text-align:center;
+  color:#c88fa5;
+  font-size:15px;
+  letter-spacing:.08em;
+  line-height:1.8;
+}
     .venue-address{
       font-family:'Noto Sans TC',sans-serif;
       line-height:1.8;
@@ -1051,6 +1059,38 @@
       text-decoration:none;
       font-family:'Noto Sans TC',sans-serif;
       font-size:14px;
+    }
+
+    .traffic-info{
+      margin-top:18px;
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:14px;
+    }
+
+    .traffic-item{
+      padding:16px 16px 15px;
+      border-radius:20px;
+      background:rgba(255,255,255,.55);
+      border:1px solid rgba(169,188,205,.22);
+      font-family:'Noto Sans TC',sans-serif;
+    }
+
+    .traffic-item strong{
+      display:block;
+      margin-bottom:7px;
+      color:#4f6070;
+      font-size:15px;
+      font-weight:700;
+      letter-spacing:.06em;
+    }
+
+    .traffic-item p{
+      margin:0;
+      line-height:1.85;
+      color:rgba(79,96,112,.78);
+      font-size:13.5px;
+      font-weight:300;
     }
 
     .gallery-grid{
@@ -1140,6 +1180,9 @@
       .hero::before{width:370px;height:370px}
       .names{margin-top:24px;font-size:clamp(62px,18vw,92px)}
       .map-wrap{height:260px}
+      .traffic-info{grid-template-columns:1fr}
+      .traffic-item{padding:15px 14px}
+      .traffic-item p{font-size:13.5px}
       .gallery-grid{grid-template-columns:1fr}
       .schedule-row{grid-template-columns:74px 1fr}
 
@@ -1226,9 +1269,9 @@
     <div class="fade-up show hero-content">
       <span class="tag">OUR WEDDING DAY</span>
       <h1 class="names">Tim & Aries</h1>
-      <p class="subtitle">從 Slack 的一則訊息開始，<br>走到了婚禮這一天。</p>
+      <p class="subtitle">那時候的我們都不知道，<br>一個簡單的問題，會變成一輩子的陪伴。</p>
       <p class="theme">三生有幸，餘生有你</p>
-      <p class="date">2026.12.19 · VICTORIA HOTEL TAIPEI</p>
+      <p class="date">2026.12.19 · Grand Victoria Hotel</p>
       <div class="hero-photo">婚紗主視覺預留</div>
     </div>
     <div class="scroll">SCROLL</div>
@@ -1266,18 +1309,14 @@
         <div class="profile-photo">Tim<br>照片</div>
         <div class="profile-name">Tim</div>
         <p class="profile-line">🏹 射手座</p>
-        <p class="profile-line">既感性又理性</p>
-        <span class="profile-mini">☕ 綾鷹</span>
-        <span class="profile-mini">🥬 大豆苗</span>
+        <p class="profile-line">做妳自己，我來愛妳</p>
       </article>
 
       <article class="profile-card">
         <div class="profile-photo">Aries<br>照片</div>
         <div class="profile-name">Aries</div>
-        <p class="profile-line">🔥 牡羊座</p>
-        <p class="profile-line">火爆瘋子</p>
-        <span class="profile-mini">☕ 咖啡</span>
-        <span class="profile-mini">🍟 薯餅</span>
+        <p class="profile-line">🐑 牡羊座</p>
+        <p class="profile-line">做你的避風港，也陪你闖世界。</p>
       </article>
     </div>
   </section>
@@ -1411,16 +1450,19 @@
     <div class="info-card glass">
       <div class="info-grid">
         <article class="info-box">
-          <h3 class="venue-name">2026.12.19</h3>
+          <h3 class="venue-name">當天流程</h3>
           <div class="schedule-list">
             <div class="schedule-row">
               <div class="schedule-time">17:00</div>
-              <div class="schedule-text">賓客入場報到</div>
+              <div class="schedule-text">賓客入場</div>
             </div>
             <div class="schedule-row">
               <div class="schedule-time">18:00</div>
               <div class="schedule-text">開席</div>
             </div>
+
+            <p class="schedule-note"> ♡ 歡迎提前來找我們玩 ♡</p>
+            
           </div>
           <div class="photo-placeholder">宴會廳 / 婚紗照預留</div>
         </article>
@@ -1437,6 +1479,18 @@
             </iframe>
           </div>
           <a class="map-link" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query=%E7%B6%AD%E5%A4%9A%E9%BA%97%E4%BA%9E%E9%85%92%E5%BA%97%20%E5%8F%B0%E5%8C%97%E5%B8%82%E4%B8%AD%E5%B1%B1%E5%8D%80%E6%95%AC%E6%A5%AD%E5%9B%9B%E8%B7%AF168%E8%99%9F">開啟 Google Map</a>
+
+          <div class="traffic-info">
+            <div class="traffic-item">
+              <strong>🚈 捷運</strong>
+              <p>搭乘捷運文湖線至劍南路站，從 3 號出口出站。</p>
+            </div>
+
+            <div class="traffic-item">
+              <strong>🚌 公車</strong>
+              <p>搭乘 28、222、247、267、268、內湖幹線(287)、620、646、72、902、紅2、藍7、藍26 等公車至美麗華站，步行約 3 分鐘。</p>
+            </div>
+          </div>
         </article>
       </div>
     </div>

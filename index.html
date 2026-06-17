@@ -569,19 +569,23 @@
       position:relative;
       overflow:hidden;
       isolation:isolate;
+      border-radius:38px;
     }
 
-    .love-watermark{
-      position:absolute;
-      inset:0;
-      z-index:0;
-      background-image:url("./love-watermark.jpg");
-      background-size:cover;
-      background-position:center;
-      opacity:.35;
-      filter:grayscale(20%) blur(.2px);
-      pointer-events:none;
-    }
+.love-watermark{
+  position:absolute;
+  inset:0;
+  z-index:0;
+  background-image:url("./love-watermark.jpg");
+
+  background-size:120%;
+  background-position:center 40%;
+  background-repeat:no-repeat;
+
+  opacity:.25;
+  filter:grayscale(10%) blur(.2px);
+  pointer-events:none;
+}
 
     .love-card::after{
       content:"";
@@ -1117,6 +1121,7 @@
     }
 
     @media(max-width:760px){
+            .love-watermark{background-size:180%;background-position:center center;}
       .envelope-stage{}.envelope{width:min(360px,86vw);height:238px}.letter{height:172px;bottom:20px}.letter-names{font-size:52px}.envelope-seal{width:54px;height:54px;font-size:25px}.open-hint{bottom:50px;font-size:13px;padding:9px 14px;letter-spacing:.08em}.enter-screen.opening .letter{transform:translateX(-50%) translateY(-122px) scale(1.05)}
       .section{padding:72px 16px}
       .countdown{grid-template-columns:repeat(2,1fr)}

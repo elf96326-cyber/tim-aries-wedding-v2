@@ -1136,8 +1136,9 @@
       border-radius:28px;
     }
     
-    .gallery-hint{
-    display:none;
+    .gallery-hint,
+    .story-hint{
+      display:none;
     }
     
     .closing{
@@ -1220,12 +1221,14 @@
       .gallery-grid .photo-placeholder{flex:0 0 82%;aspect-ratio:3/4;scroll-snap-align:center;}
       .gallery-hint{display:block;text-align:center;font-size:13px;color:rgba(79,96,112,.55);margin-bottom:18px;letter-spacing:.05em;}
       .schedule-row{grid-template-columns:74px 1fr}
-      .story-book{gap:18px}
-      .chapter-card{border-radius:28px;background:rgba(255,255,255,.74)}
-      .chapter-head{grid-template-columns:1fr 58px}
+      .story-hint{display:block;text-align:center;font-size:13px;color:rgba(79,96,112,.55);margin-bottom:18px;letter-spacing:.05em;}
+      .story-book{display:flex;gap:18px;overflow-x:auto;overflow-y:hidden;scroll-snap-type:x mandatory;-webkit-overflow-scrolling:touch;padding:0 16px 12px;margin-left:-16px;margin-right:-16px;}
+      .story-book::-webkit-scrollbar{display:none;}
+      .chapter-card{flex:0 0 88%;scroll-snap-align:center;border-radius:28px;background:rgba(255,255,255,.74)}
+      .chapter-head{grid-template-columns:1fr}
       .chapter-visual{grid-column:1 / -1;min-height:auto;padding:22px 20px 0;border-right:0;background:transparent}
       .chapter-photo{width:min(230px,78vw);max-width:100%;margin:0 auto 2px}
-      .chapter-main{padding:22px 20px 24px}
+      .chapter-main{padding:22px 20px 24px;text-align:center}
       .chapter-main h3{font-size:34px}
       .chapter-date{font-size:12px;letter-spacing:.08em}
       .chapter-main p{font-size:14.5px}
@@ -1363,6 +1366,10 @@
     <h2 class="section-title">我們的故事</h2>
     <div class="section-en">Our Story</div>
     <p class="section-sub">把我們的故事收進三個章節裡，想慢慢看的人，可以一頁一頁打開。</p>
+
+    <p class="story-hint">
+      ← 左右滑動閱讀故事 →
+    </p>
 
     <div class="story-book">
       <article class="chapter-card">

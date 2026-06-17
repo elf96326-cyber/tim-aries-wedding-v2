@@ -1222,7 +1222,7 @@
       .gallery-hint{display:block;text-align:center;font-size:13px;color:rgba(79,96,112,.55);margin-bottom:18px;letter-spacing:.05em;}
       .schedule-row{grid-template-columns:74px 1fr}
       .story-hint{display:block;text-align:center;font-size:13px;color:rgba(79,96,112,.55);margin-bottom:18px;letter-spacing:.05em;}
-      .story-book{display:flex;gap:18px;overflow-x:auto;overflow-y:hidden;scroll-snap-type:x mandatory;-webkit-overflow-scrolling:touch;padding:0 16px 12px;margin-left:-16px;margin-right:-16px;}
+      .story-book{display:flex;gap:18px;overflow-x:auto;overflow-y:hidden;scroll-snap-type:x mandatory;-webkit-overflow-scrolling:touch;padding:0 16px 12px;margin-left:-16px;margin-right:-16px;align-items:flex-start;}
       .story-book::-webkit-scrollbar{display:none;}
       .chapter-card{flex:0 0 88%;scroll-snap-align:center;border-radius:28px;background:rgba(255,255,255,.74)}
       .chapter-head{grid-template-columns:1fr}
@@ -1233,22 +1233,7 @@
       .chapter-date{font-size:12px;letter-spacing:.08em}
       .chapter-main p{font-size:14.5px}
       .chapter-body{padding:0 16px 22px}
-
-      .story-book.has-open{
-        overflow-x:visible;
-        padding-left:16px;
-        padding-right:16px;
-      }
-      .story-book.has-open .chapter-card:not(.active-card){
-        display:none;
-      }
-      .story-book.has-open .chapter-card.active-card{
-        flex:0 0 100%;
-        width:100%;
-      }
-      .chapter-card.open{
-        scroll-snap-align:start;
-      }
+.chapter-card.open{flex:0 0 96%;scroll-snap-align:start;}
 
       /* 手機版倒數區塊精簡 */
       .section:has(.countdown-card){
@@ -1681,8 +1666,6 @@
       });
     }
 
-    const storyBook = document.querySelector('.story-book');
-
     document.querySelectorAll('.chapter-head, .chapter-bottom-toggle').forEach(button => {
       button.addEventListener('click', () => {
         const card = button.closest('.chapter-card');
@@ -1690,20 +1673,10 @@
 
         document.querySelectorAll('.chapter-card').forEach(item => {
           item.classList.remove('open');
-          item.classList.remove('active-card');
         });
-
-        if(storyBook){
-          storyBook.classList.remove('has-open');
-        }
 
         if(!isOpen){
           card.classList.add('open');
-          card.classList.add('active-card');
-
-          if(storyBook){
-            storyBook.classList.add('has-open');
-          }
         }
 
         syncChapterButtons();

@@ -190,64 +190,79 @@
       transition:opacity .45s ease, transform .75s cubic-bezier(.22,1,.36,1);
     }
 
-    .letter{
+    
+.letter-stack{position:absolute;left:50%;bottom:18px;width:700px;height:380px;
+  transform:translateX(-50%) translateY(52px);
+  opacity:0;
+  z-index:2;
+  pointer-events:none;
+  transition:transform 1.05s cubic-bezier(.22,1,.36,1), opacity .8s ease;
+}
+
+.popup-photo{position:absolute;width:340px;height:220px;left:20px;top:20px;transform:rotate(-4deg);
+  border-radius:18px;
+  background-image:url("./cover-photo.jpg");
+  background-size:cover;
+  background-position:center;
+  background-repeat:no-repeat;
+  border:5px solid rgba(255,255,255,.96);
+  box-shadow:0 14px 34px rgba(79,96,112,.18);
+  z-index:1;
+}
+
+.popup-invite{position:absolute;width:340px;height:220px;right:20px;top:90px;transform:rotate(4deg);
+  border-radius:18px;
+  background:linear-gradient(180deg,rgba(255,255,255,.96),rgba(255,247,250,.94));
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  align-items:center;
+  color:#4f6070;
+  padding:20px;
+  z-index:2;
+  border:1px solid rgba(228,184,201,.32);
+  box-shadow:0 18px 38px rgba(79,96,112,.11);
+}
+
+.popup-invite::before{
+
+      content:"";
       position:absolute;
-      left:50%;
-      bottom:18px;
-      transform:translateX(-50%) translateY(52px) scale(.96);
-      width:82%;
-      height:340px;
-      z-index:2;
-      border-radius:24px;
-      background:
-        linear-gradient(180deg,rgba(255,255,255,.96),rgba(255,247,250,.94));
-      border:1px solid rgba(228,184,201,.32);
-      box-shadow:0 18px 38px rgba(79,96,112,.11);
-      display:flex;
-      flex-direction:column;
-      justify-content:center;
-      align-items:center;
-      transition:transform 1.05s cubic-bezier(.22,1,.36,1), opacity .8s ease;
-      color:#4f6070;
-      opacity:0;
+      inset:14px;
+      border:1px solid rgba(228,184,201,.26);
+      border-radius:18px;
       pointer-events:none;
     }
 
     .letter-small{
       font-family:'Noto Sans TC',sans-serif;
-      font-size:13px;
-      letter-spacing:.24em;
+      font-size:12px;
+      letter-spacing:.22em;
       color:rgba(79,96,112,.64);
       text-transform:uppercase;
+      position:relative;
+      z-index:1;
     }
 
     .letter-names{
       font-family:'Great Vibes',cursive;
-      font-size:76px;
+      font-size:54px;
       line-height:1;
       color:#4f6070;
-      margin:16px 0 8px;
+      margin:18px 0 10px;
+      position:relative;
+      z-index:1;
+      white-space:nowrap;
     }
 
     .letter-date{
       font-family:'Noto Sans TC',sans-serif;
-      font-size:13px;
-      letter-spacing:.2em;
+      font-size:12px;
+      letter-spacing:.18em;
       color:rgba(79,96,112,.72);
+      position:relative;
+      z-index:1;
     }
-
-    .letter-photo{
-  width:180px;
-  height:120px;
-  margin-bottom:14px;
-  border-radius:18px;
-  background-image:url("./cover-photo.jpg");
-  background-size:cover;
-  background-position:center;
-  border:4px solid rgba(255,255,255,.95);
-  box-shadow:
-    0 10px 30px rgba(79,96,112,.15);
-}
 
     .open-hint{
       position:absolute;
@@ -299,9 +314,9 @@
       z-index:2;
     }
 
-    .enter-screen.opening .letter{
+    .enter-screen.opening .letter-stack{
       opacity:1;
-      transform:translateX(-50%) translateY(-178px) scale(1.06);
+      transform:translateX(-50%) translateY(-300px) scale(1.06);
       z-index:7;
     }
 
@@ -1184,8 +1199,7 @@
         background-size:cover;
         background-position:center 48%;
       }
-      .envelope-stage{}.envelope{width:min(360px,86vw);height:238px}.letter{height:260px;bottom:20px}.letter-names{font-size:52px}.envelope-seal{width:54px;height:54px;font-size:25px}.open-hint{bottom:50px;font-size:13px;padding:9px 14px;letter-spacing:.08em}.enter-screen.opening .letter{transform:translateX(-50%) translateY(-122px) scale(1.05)}
-      .letter-photo{width:130px;height:88px;}
+      .envelope-stage{}.envelope{width:min(360px,86vw);height:238px}.letter-stack{width:320px;height:240px;bottom:20px}.popup-photo{width:220px;height:140px;left:10px;top:10px;border-width:4px}.popup-invite{width:220px;height:140px;right:10px;top:70px;padding:10px}.letter-small{font-size:7px;letter-spacing:.1em}.letter-names{font-size:30px;margin:10px 0 6px}.letter-date{font-size:8.5px;letter-spacing:.09em}.envelope-seal{width:54px;height:54px;font-size:25px}.open-hint{bottom:50px;font-size:13px;padding:9px 14px;letter-spacing:.08em}.enter-screen.opening .letter-stack{transform:translateX(-50%) translateY(-122px) scale(1.05)}
       .section{padding:72px 16px}
       .countdown{grid-template-columns:repeat(2,1fr)}
       .profile-grid,.info-grid{grid-template-columns:1fr}
@@ -1258,11 +1272,14 @@
   <div class="enter-screen" id="enterScreen">
     <div class="envelope-stage" id="envelopeStage">
       <button class="envelope" id="enterBtn" aria-label="開啟婚禮邀請函">
-        <div class="letter">
-          <div class="letter-photo"></div>
-          <div class="letter-small">Wedding Invitation</div>
-          <div class="letter-names">Tim & Aries</div>
-          <div class="letter-date">2026.12.19</div>
+        <div class="letter-stack">
+          <div class="popup-card popup-photo" aria-hidden="true"></div>
+
+          <div class="popup-card popup-invite">
+            <div class="letter-small">Wedding Invitation</div>
+            <div class="letter-names">Tim & Aries</div>
+            <div class="letter-date">2026.12.19</div>
+          </div>
         </div>
         <div class="envelope-back"></div>
         <div class="envelope-flap"></div>
@@ -1479,7 +1496,7 @@
             <p class="schedule-note"> ♡ 歡迎提前來找我們玩 ♡</p>
             
           </div>
-          <div class="photo-placeholder">宴會廳 / 婚紗照預留</div>
+          
         </article>
 
         <article class="info-box">

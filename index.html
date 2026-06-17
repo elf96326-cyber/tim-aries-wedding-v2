@@ -1234,6 +1234,22 @@
       .chapter-main p{font-size:14.5px}
       .chapter-body{padding:0 16px 22px}
 
+      .story-book.has-open{
+        overflow-x:visible;
+        padding-left:16px;
+        padding-right:16px;
+      }
+      .story-book.has-open .chapter-card:not(.active-card){
+        display:none;
+      }
+      .story-book.has-open .chapter-card.active-card{
+        flex:0 0 100%;
+        width:100%;
+      }
+      .chapter-card.open{
+        scroll-snap-align:start;
+      }
+
       /* 手機版倒數區塊精簡 */
       .section:has(.countdown-card){
         padding-top:54px;
@@ -1665,6 +1681,8 @@
       });
     }
 
+    const storyBook = document.querySelector('.story-book');
+
     document.querySelectorAll('.chapter-head, .chapter-bottom-toggle').forEach(button => {
       button.addEventListener('click', () => {
         const card = button.closest('.chapter-card');
@@ -1672,10 +1690,20 @@
 
         document.querySelectorAll('.chapter-card').forEach(item => {
           item.classList.remove('open');
+          item.classList.remove('active-card');
         });
+
+        if(storyBook){
+          storyBook.classList.remove('has-open');
+        }
 
         if(!isOpen){
           card.classList.add('open');
+          card.classList.add('active-card');
+
+          if(storyBook){
+            storyBook.classList.add('has-open');
+          }
         }
 
         syncChapterButtons();

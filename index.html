@@ -658,40 +658,23 @@
 
     .profile-grid{
       display:grid;
-      gap:34px;
-      max-width:980px;
+      gap:70px;
+      max-width:760px;
       margin:0 auto;
     }
 
     .profile-card{
       position:relative;
       overflow:visible;
-      min-height:500px;
-      padding:34px 42px;
+      min-height:380px;
+      padding:56px 56px 54px;
       border-radius:40px;
       background:
-        radial-gradient(circle at 12% 16%, rgba(200,164,92,.10), transparent 30%),
-        linear-gradient(180deg,rgba(255,255,255,.86),rgba(252,248,242,.72));
+        radial-gradient(circle at 10% 16%, rgba(200,164,92,.10), transparent 30%),
+        linear-gradient(180deg,rgba(255,255,255,.88),rgba(252,248,242,.76));
       border:1px solid var(--line);
       box-shadow:var(--shadow);
-      display:grid;
-      grid-template-columns:48% 52%;
-      gap:28px;
-      align-items:center;
-    }
-
-    .profile-card:nth-child(even){
-      grid-template-columns:58% 42%;
-    }
-
-    .profile-card:nth-child(even) .profile-figure{
-      order:2;
-    }
-
-    .profile-card:nth-child(even) .profile-content{
-      order:1;
-      text-align:right;
-      align-items:flex-end;
+      display:block;
     }
 
     .profile-card>*{
@@ -699,20 +682,47 @@
       z-index:1;
     }
 
+    .profile-content{
+      width:58%;
+      display:flex;
+      flex-direction:column;
+      align-items:flex-start;
+      text-align:left;
+      position:relative;
+      z-index:3;
+    }
+
+    .profile-card:nth-child(even) .profile-content{
+      margin-left:0;
+      text-align:left;
+      align-items:flex-start;
+    }
+
     .profile-figure{
-      min-height:300px;
+      position:absolute;
+      right:-34px;
+      bottom:-34px;
+      width:43%;
+      min-height:0;
       display:grid;
       place-items:end center;
-      position:relative;
       isolation:isolate;
+      z-index:2;
+      pointer-events:none;
+    }
+
+    .profile-card:nth-child(even) .profile-figure{
+      right:-26px;
+      left:auto;
+      bottom:-36px;
     }
 
     .profile-figure::after{
       content:"";
       position:absolute;
       left:50%;
-      bottom:8px;
-      width:76%;
+      bottom:18px;
+      width:72%;
       height:34px;
       transform:translateX(-50%);
       border-radius:50%;
@@ -722,21 +732,22 @@
     }
 
     .profile-png{
-  width:min(340px,100%);
-  max-height:430px;
-  object-fit:contain;
-  object-position:bottom center;
-  margin-bottom:-30px;
-  filter:drop-shadow(0 24px 35px rgba(70,45,35,.16));
-}
+      display:block;
+      width:min(390px,100%);
+      max-height:470px;
+      object-fit:contain;
+      object-position:bottom center;
+      margin-bottom:0;
+      filter:drop-shadow(0 24px 35px rgba(70,45,35,.16));
+    }
 
-.profile-card:first-child .profile-png{
-  transform:translateX(-25px);
-}
+    .profile-card:first-child .profile-png{
+      transform:translateX(6px);
+    }
 
-.profile-card:last-child .profile-png{
-  transform:translateX(25px);
-}
+    .profile-card:last-child .profile-png{
+      transform:translateX(0);
+    }
 
     .profile-figure span{
       position:absolute;
@@ -760,16 +771,9 @@
         repeating-linear-gradient(45deg,rgba(200,164,92,.08) 0 1px,transparent 1px 12px);
     }
 
-    .profile-content{
-      display:flex;
-      flex-direction:column;
-      align-items:flex-start;
-      text-align:left;
-    }
-
     .profile-name{
       font-family:'Great Vibes',cursive;
-      font-size:clamp(52px,7vw,76px);
+      font-size:clamp(56px,7vw,78px);
       line-height:1;
       color:var(--deep);
       margin:0 0 18px;
@@ -785,7 +789,7 @@
     }
 
     .profile-card:nth-child(even) .profile-name::after{
-      margin-left:auto;
+      margin-left:0;
     }
 
     .profile-line{
@@ -795,12 +799,13 @@
     }
 
     .profile-line.quote{
-      margin-top:22px;
+      margin-top:28px;
       line-height:2;
       font-size:20px;
       color:var(--deep);
       font-style:italic;
       letter-spacing:.06em;
+      max-width:520px;
     }
 
     .profile-mini{
@@ -1648,6 +1653,145 @@
         font-size:17px;
         line-height:1.95;
       }
+
+      /* 手機版人物介紹：維持左右排版，PNG 可超出卡片 */
+      .profile-card{
+        min-height:360px;
+        padding:26px 20px 30px;
+        border-radius:34px;
+        grid-template-columns:47% 53%;
+        gap:6px;
+        text-align:left;
+        overflow:visible;
+      }
+
+      .profile-card:nth-child(even){
+        grid-template-columns:53% 47%;
+      }
+
+      .profile-card:nth-child(even) .profile-figure{
+        order:2;
+      }
+
+      .profile-card:nth-child(even) .profile-content{
+        order:1;
+        text-align:right;
+        align-items:flex-end;
+      }
+
+      .profile-content{
+        text-align:left;
+        align-items:flex-start;
+        z-index:3;
+      }
+
+      .profile-figure{
+        min-height:310px;
+        place-items:end center;
+        z-index:2;
+      }
+
+      .profile-png{
+        width:min(285px,72vw);
+        max-height:380px;
+        margin-bottom:-42px;
+      }
+
+      .profile-card:first-child .profile-png{
+        transform:translateX(-32px);
+      }
+
+      .profile-card:last-child .profile-png{
+        transform:translateX(32px);
+      }
+
+      .profile-name{
+        font-size:42px;
+      }
+
+      .profile-name::after{
+        margin:12px 0 0;
+      }
+
+      .profile-card:nth-child(even) .profile-name::after{
+        margin-left:auto;
+      }
+
+      .profile-line.quote{
+        font-size:15.5px;
+        line-height:1.85;
+      }
+      /* 手機版人物介紹：雜誌風左右排版，人物可超出卡片 */
+      .profile-grid{
+        gap:54px;
+      }
+
+      .profile-card{
+        min-height:320px;
+        padding:38px 24px 36px;
+        border-radius:34px;
+        display:block;
+        text-align:left;
+        overflow:visible;
+      }
+
+      .profile-content,
+      .profile-card:nth-child(even) .profile-content{
+        width:62%;
+        text-align:left;
+        align-items:flex-start;
+        margin-left:0;
+        position:relative;
+        z-index:3;
+      }
+
+      .profile-figure,
+      .profile-card:nth-child(even) .profile-figure{
+        position:absolute;
+        right:-30px;
+        left:auto;
+        bottom:-34px;
+        width:47%;
+        min-height:0;
+        display:grid;
+        place-items:end center;
+        z-index:2;
+      }
+
+      .profile-png{
+        width:min(260px,58vw);
+        max-height:350px;
+        margin-bottom:0;
+      }
+
+      .profile-card:first-child .profile-png{
+        transform:translateX(4px);
+      }
+
+      .profile-card:last-child .profile-png{
+        transform:translateX(0);
+      }
+
+      .profile-name{
+        font-size:44px;
+      }
+
+      .profile-name::after,
+      .profile-card:nth-child(even) .profile-name::after{
+        margin:12px 0 0;
+      }
+
+      .profile-line.quote{
+        font-size:15.5px;
+        line-height:1.85;
+        margin-top:22px;
+        max-width:210px;
+      }
+
+      .profile-mini{
+        font-size:12px;
+        padding:7px 14px;
+      }
       .timeline{padding-left:18px}
       .story-item{padding:22px 18px 22px 24px}
       .hero::before{width:370px;height:370px}
@@ -1715,6 +1859,160 @@
       }
 
     }
+  
+
+    /* 人物介紹區｜推薦版：桌機雜誌風、手機人物上方 */
+    .profile-grid{
+      max-width:760px;
+      gap:82px;
+      overflow:visible;
+    }
+
+    .profile-card{
+      position:relative;
+      overflow:visible;
+      min-height:360px;
+      padding:52px 52px 50px;
+      display:block;
+    }
+
+    .profile-content{
+      width:58%;
+      position:relative;
+      z-index:3;
+    }
+
+    .profile-card:nth-child(even) .profile-content{
+      width:58%;
+      margin-left:0;
+      text-align:left;
+      align-items:flex-start;
+    }
+
+    .profile-card:nth-child(even) .profile-name::after{
+      margin-left:0;
+    }
+
+    .profile-figure,
+    .profile-card:nth-child(even) .profile-figure{
+      position:absolute;
+      right:-42px;
+      left:auto;
+      bottom:-44px;
+      width:48%;
+      min-height:0;
+      display:grid;
+      place-items:end center;
+      z-index:2;
+      pointer-events:none;
+    }
+
+    .profile-png{
+      width:min(410px,100%);
+      max-height:490px;
+      object-fit:contain;
+      object-position:bottom center;
+      margin-bottom:0;
+      filter:drop-shadow(0 26px 36px rgba(70,45,35,.16));
+    }
+
+    .profile-card:first-child .profile-png,
+    .profile-card:last-child .profile-png{
+      transform:translateX(0);
+    }
+
+    .profile-line.quote{
+      max-width:360px;
+    }
+
+    @media(max-width:760px){
+      /* 手機版改為：人物在上、文字在下，閱讀最舒服 */
+      .profile-grid{
+        gap:64px;
+        max-width:420px;
+        margin:0 auto;
+        overflow:visible;
+      }
+
+      .profile-card{
+        min-height:auto;
+        padding:0 24px 34px;
+        border-radius:34px;
+        display:flex;
+        flex-direction:column;
+        align-items:center;
+        text-align:center;
+        overflow:visible;
+        margin-top:74px;
+      }
+
+      .profile-content,
+      .profile-card:nth-child(even) .profile-content{
+        width:100%;
+        margin-left:0;
+        text-align:center;
+        align-items:center;
+        order:2;
+        z-index:3;
+      }
+
+      .profile-figure,
+      .profile-card:nth-child(even) .profile-figure{
+        position:relative;
+        right:auto;
+        left:auto;
+        bottom:auto;
+        width:100%;
+        min-height:0;
+        order:1;
+        display:grid;
+        place-items:center;
+        margin:-82px auto 4px;
+        z-index:2;
+      }
+
+      .profile-figure::after{
+        bottom:10px;
+        width:58%;
+        height:28px;
+      }
+
+      .profile-png{
+        width:min(270px,76vw);
+        max-height:350px;
+        margin-bottom:-8px;
+        object-fit:contain;
+        object-position:bottom center;
+      }
+
+      .profile-card:first-child .profile-png,
+      .profile-card:last-child .profile-png{
+        transform:translateX(0);
+      }
+
+      .profile-name{
+        font-size:48px;
+        margin-top:4px;
+      }
+
+      .profile-name::after,
+      .profile-card:nth-child(even) .profile-name::after{
+        margin:12px auto 0;
+      }
+
+      .profile-line.quote{
+        max-width:260px;
+        margin-top:22px;
+        font-size:16.5px;
+        line-height:1.9;
+      }
+
+      .profile-mini{
+        font-size:12.5px;
+        padding:8px 16px;
+      }
+    }
+
   </style>
 </head>
 

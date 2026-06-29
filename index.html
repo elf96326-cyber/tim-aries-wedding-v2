@@ -2276,6 +2276,114 @@
         transform:translateX(0) !important;
       }
     }
+
+
+    /* 人物介紹區｜手機版修正：照片左右交錯、文字置中 */
+    @media(max-width:760px){
+      .profile-grid{
+        max-width:420px;
+        gap:54px;
+        margin:0 auto;
+        overflow:visible;
+      }
+
+      .profile-card{
+        position:relative;
+        min-height:330px;
+        padding:42px 22px 42px;
+        border-radius:34px;
+        display:block;
+        overflow:visible;
+        margin-top:0;
+        text-align:center;
+      }
+
+      .profile-content,
+      .profile-card:nth-child(even) .profile-content{
+        width:58%;
+        position:relative;
+        z-index:3;
+        display:flex;
+        flex-direction:column;
+        align-items:center;
+        text-align:center;
+        margin:0;
+      }
+
+      .profile-card:first-child .profile-content{
+        margin-right:auto;
+        margin-left:0;
+      }
+
+      .profile-card:nth-child(even) .profile-content{
+        margin-left:auto;
+        margin-right:0;
+      }
+
+      .profile-figure,
+      .profile-card:first-child .profile-figure,
+      .profile-card:nth-child(even) .profile-figure{
+        position:absolute;
+        top:auto;
+        bottom:0;
+        width:52%;
+        min-height:0;
+        margin:0;
+        display:grid;
+        place-items:end center;
+        z-index:2;
+        pointer-events:none;
+      }
+
+      .profile-card:first-child .profile-figure{
+        right:-34px;
+        left:auto;
+      }
+
+      .profile-card:nth-child(even) .profile-figure{
+        left:-34px;
+        right:auto;
+      }
+
+      .profile-png{
+        height:300px;
+        width:auto;
+        max-width:none;
+        max-height:none;
+        object-fit:contain;
+        object-position:bottom center;
+        margin:0;
+      }
+
+      .profile-card:first-child .profile-png,
+      .profile-card:last-child .profile-png{
+        transform:translateX(0);
+      }
+
+      .profile-name{
+        font-size:46px;
+        margin:0 0 16px;
+      }
+
+      .profile-name::after,
+      .profile-card:nth-child(even) .profile-name::after{
+        margin:12px auto 0;
+      }
+
+      .profile-mini{
+        font-size:12.5px;
+        padding:8px 15px;
+      }
+
+      .profile-line.quote{
+        max-width:210px;
+        margin-top:24px;
+        font-size:15.5px;
+        line-height:1.85;
+        text-align:center;
+      }
+    }
+
 </style>
 </head>
 

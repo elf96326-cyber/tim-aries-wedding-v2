@@ -2288,7 +2288,7 @@
   }
 
   .profile-card{
-    width:88% !important;
+    width:82% !important;
     min-height:330px !important;
     margin:0 auto 70px !important;
     padding:34px 22px 34px !important;
@@ -2380,6 +2380,233 @@
   .profile-mini{
     font-size:12px !important;
     padding:7px 14px !important;
+  }
+}
+
+
+
+/* 人物介紹區｜手機版最終修正：Tim 往內、Aries 避開文字 */
+@media(max-width:760px){
+  .profile-grid{
+    max-width:420px !important;
+    width:100% !important;
+    gap:58px !important;
+    margin:0 auto !important;
+    overflow:visible !important;
+  }
+
+  .profile-card{
+    width:82% !important;
+    min-height:318px !important;
+    margin:0 auto 68px !important;
+    padding:32px 20px 32px !important;
+    border-radius:34px !important;
+    display:block !important;
+    position:relative !important;
+    overflow:visible !important;
+    text-align:center !important;
+  }
+
+  .profile-content,
+  .profile-card:first-child .profile-content{
+    width:50% !important;
+    margin:0 !important;
+    padding:0 !important;
+    text-align:center !important;
+    align-items:center !important;
+    position:relative !important;
+    z-index:4 !important;
+  }
+
+  .profile-card:nth-child(even) .profile-content{
+    width:48% !important;
+    margin-left:auto !important;
+    margin-right:0 !important;
+    padding:0 !important;
+    text-align:center !important;
+    align-items:center !important;
+    position:relative !important;
+    z-index:4 !important;
+  }
+
+  .profile-name{
+    font-size:44px !important;
+    margin:0 0 16px !important;
+  }
+
+  .profile-name::after,
+  .profile-card:first-child .profile-name::after,
+  .profile-card:nth-child(even) .profile-name::after{
+    margin:12px auto 0 !important;
+  }
+
+  .profile-mini{
+    font-size:12px !important;
+    padding:7px 14px !important;
+  }
+
+  .profile-line.quote{
+    max-width:160px !important;
+    margin:18px auto 0 !important;
+    text-align:center !important;
+    font-size:15.5px !important;
+    line-height:1.85 !important;
+  }
+
+  .profile-figure,
+  .profile-card:first-child .profile-figure,
+  .profile-card:nth-child(even) .profile-figure{
+    position:absolute !important;
+    bottom:0 !important;
+    min-height:0 !important;
+    display:grid !important;
+    place-items:end center !important;
+    pointer-events:none !important;
+    z-index:3 !important;
+  }
+
+  /* Tim：右側人物往卡片內收 */
+  .profile-card:first-child .profile-figure{
+    right:4px !important;
+    left:auto !important;
+    width:42% !important;
+  }
+
+  /* Aries：左側人物往旁邊退，避免蓋到文字 */
+  .profile-card:nth-child(even) .profile-figure{
+    left:-40px !important;
+    right:auto !important;
+    width:42% !important;
+  }
+
+  .profile-png{
+    height:282px !important;
+    width:auto !important;
+    max-width:none !important;
+    max-height:none !important;
+    object-fit:contain !important;
+    object-position:bottom center !important;
+    margin-bottom:0 !important;
+  }
+
+  .profile-card:first-child .profile-png,
+  .profile-card:last-child .profile-png{
+    transform:translateX(0) !important;
+  }
+}
+
+
+/* ===== 人物介紹區｜手機版位置修正（Tim 往內、Aries 避開文字） ===== */
+@media(max-width:760px){
+  .profile-grid{
+    max-width:420px !important;
+    width:100% !important;
+    gap:58px !important;
+    margin:0 auto !important;
+    overflow:visible !important;
+  }
+
+  .profile-card{
+    width:82% !important;
+    min-height:330px !important;
+    margin:0 auto 70px !important;
+    padding:34px 22px 34px !important;
+    border-radius:34px !important;
+    display:block !important;
+    position:relative !important;
+    overflow:visible !important;
+    text-align:center !important;
+  }
+
+  .profile-content,
+  .profile-card:first-child .profile-content,
+  .profile-card:nth-child(even) .profile-content{
+    width:52% !important;
+    margin:0 !important;
+    padding:0 !important;
+    text-align:center !important;
+    align-items:center !important;
+    position:relative !important;
+    z-index:4 !important;
+  }
+
+  .profile-card:first-child .profile-content{
+    margin-right:auto !important;
+    margin-left:0 !important;
+  }
+
+  .profile-card:nth-child(even) .profile-content{
+    margin-left:auto !important;
+    margin-right:0 !important;
+  }
+
+  .profile-name{
+    font-size:42px !important;
+  }
+
+  .profile-name::after,
+  .profile-card:first-child .profile-name::after,
+  .profile-card:nth-child(even) .profile-name::after{
+    margin:12px auto 0 !important;
+  }
+
+  .profile-line.quote{
+    max-width:165px !important;
+    margin:18px auto 0 !important;
+    text-align:center !important;
+    font-size:15.5px !important;
+    line-height:1.85 !important;
+  }
+
+  .profile-mini{
+    font-size:12px !important;
+    padding:7px 14px !important;
+  }
+
+  .profile-figure,
+  .profile-card:first-child .profile-figure,
+  .profile-card:nth-child(even) .profile-figure{
+    position:absolute !important;
+    bottom:0 !important;
+    width:44% !important;
+    min-height:0 !important;
+    display:grid !important;
+    place-items:end center !important;
+    z-index:3 !important;
+    pointer-events:none !important;
+  }
+
+  /* Tim：往卡片內收，不要貼右邊 */
+  .profile-card:first-child .profile-figure{
+    right:18px !important;
+    left:auto !important;
+  }
+
+  /* Aries：往左邊退一點，避免壓到文字 */
+  .profile-card:nth-child(even) .profile-figure{
+    left:-6px !important;
+    right:auto !important;
+  }
+
+  .profile-png{
+    height:275px !important;
+    width:auto !important;
+    max-width:none !important;
+    max-height:none !important;
+    object-fit:contain !important;
+    object-position:bottom center !important;
+    margin-bottom:0 !important;
+  }
+
+  .profile-card:first-child .profile-png,
+  .profile-card:last-child .profile-png{
+    transform:translateX(0) !important;
+  }
+
+  .profile-figure::after{
+    bottom:2px !important;
+    width:70% !important;
+    height:26px !important;
   }
 }
 
@@ -2487,7 +2714,7 @@
   <section class="section fade-up">
     <h2 class="section-title">我們的故事</h2>
     <div class="section-en">Our Story</div>
-    <p class="section-sub">把我們的故事收進三個章節裡，想慢慢看的人，可以一頁一頁打開。</p>
+    <p class="section-sub">把我們的故事收進三個章節裡，<br>想慢慢看的朋友，可以一頁一頁打開。</p>
 
     <p class="story-hint">
       ← 左右滑動閱讀故事 →

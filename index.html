@@ -658,74 +658,155 @@
 
     .profile-grid{
       display:grid;
-      grid-template-columns:repeat(2,1fr);
-      gap:24px;
-      max-width:900px;
+      gap:34px;
+      max-width:980px;
       margin:0 auto;
     }
 
     .profile-card{
       position:relative;
-      overflow:hidden;
-      min-height:330px;
-      padding:34px 28px;
+      overflow:visible;
+      min-height:360px;
+      padding:34px 42px;
       border-radius:40px;
-      text-align:center;
-      background:linear-gradient(180deg,rgba(255,255,255,.84),rgba(248,242,232,.64));
+      background:
+        radial-gradient(circle at 12% 16%, rgba(200,164,92,.10), transparent 30%),
+        linear-gradient(180deg,rgba(255,255,255,.86),rgba(252,248,242,.72));
       border:1px solid var(--line);
       box-shadow:var(--shadow);
+      display:grid;
+      grid-template-columns:42% 58%;
+      gap:28px;
+      align-items:center;
     }
 
-    .profile-card::before{
+    .profile-card:nth-child(even){
+      grid-template-columns:58% 42%;
+    }
+
+    .profile-card:nth-child(even) .profile-figure{
+      order:2;
+    }
+
+    .profile-card:nth-child(even) .profile-content{
+      order:1;
+      text-align:right;
+      align-items:flex-end;
+    }
+
+    .profile-card>*{
+      position:relative;
+      z-index:1;
+    }
+
+    .profile-figure{
+      min-height:300px;
+      display:grid;
+      place-items:end center;
+      position:relative;
+      isolation:isolate;
+    }
+
+    .profile-figure::after{
       content:"";
       position:absolute;
-      width:180px;
-      height:180px;
-      top:-58px;
-      right:-42px;
-      border-radius:999px;
-      background:rgba(200,164,92,.12);
+      left:50%;
+      bottom:8px;
+      width:76%;
+      height:34px;
+      transform:translateX(-50%);
+      border-radius:50%;
+      background:radial-gradient(ellipse, rgba(80,40,30,.14), transparent 68%);
+      filter:blur(2px);
+      z-index:-1;
     }
 
-    .profile-card>*{position:relative;z-index:1}
+    .profile-png{
+      display:block;
+      width:min(260px,100%);
+      max-height:330px;
+      object-fit:contain;
+      object-position:bottom center;
+      filter:drop-shadow(0 20px 28px rgba(70,45,35,.15));
+    }
 
-    .profile-photo{
-      width:124px;
-      height:124px;
+    .profile-figure span{
+      position:absolute;
+      left:50%;
+      top:50%;
+      transform:translate(-50%,-50%);
+      width:170px;
+      height:170px;
       border-radius:999px;
-      margin:0 auto 20px;
-      border:1px dashed rgba(200,164,92,.36);
-      background:
-        linear-gradient(135deg,rgba(255,255,255,.78),rgba(248,242,232,.70)),
-        repeating-linear-gradient(45deg,rgba(200,164,92,.08) 0 1px,transparent 1px 12px);
+      border:1px dashed rgba(200,164,92,.38);
       display:grid;
       place-items:center;
+      text-align:center;
       font-family:'Noto Sans TC',sans-serif;
       color:rgba(140,31,40,.45);
-      font-size:11px;
+      font-size:12px;
       letter-spacing:.12em;
       line-height:1.8;
+      background:
+        linear-gradient(135deg,rgba(255,255,255,.70),rgba(248,242,232,.60)),
+        repeating-linear-gradient(45deg,rgba(200,164,92,.08) 0 1px,transparent 1px 12px);
+    }
+
+    .profile-content{
+      display:flex;
+      flex-direction:column;
+      align-items:flex-start;
+      text-align:left;
     }
 
     .profile-name{
       font-family:'Great Vibes',cursive;
-      font-size:58px;
+      font-size:clamp(52px,7vw,76px);
       line-height:1;
       color:var(--deep);
-      margin:0 0 22px;
+      margin:0 0 18px;
     }
 
-    .profile-line{margin:12px 0;font-size:17px;letter-spacing:.06em}
+    .profile-name::after{
+      content:"";
+      display:block;
+      width:56px;
+      height:1px;
+      margin:16px 0 0;
+      background:rgba(200,164,92,.60);
+    }
+
+    .profile-card:nth-child(even) .profile-name::after{
+      margin-left:auto;
+    }
+
+    .profile-line{
+      margin:12px 0;
+      font-size:17px;
+      letter-spacing:.06em;
+    }
+
+    .profile-line.quote{
+      margin-top:22px;
+      line-height:2;
+      font-size:20px;
+      color:var(--deep);
+      font-style:italic;
+      letter-spacing:.06em;
+    }
 
     .profile-mini{
       display:inline-flex;
-      margin:10px 7px 0;
-      padding:9px 13px;
+      align-items:center;
+      justify-content:center;
+      margin:4px 0 0;
+      padding:8px 18px;
       border-radius:999px;
       background:rgba(255,255,255,.62);
-      border:1px solid rgba(200,164,92,.28);
+      border:1px solid rgba(200,164,92,.30);
       font-family:'Noto Sans TC',sans-serif;
-      font-size:14px;
+      font-size:13px;
+      color:rgba(64,51,47,.78);
     }
 
     .photo-placeholder{
@@ -1230,8 +1311,8 @@
       cursor:pointer;
       color:var(--deep);
       font-family:inherit;
-      filter:drop-shadow(0 28px 42px rgba(70,45,35,.16));
-      animation:scrollBreath 2.8s ease-in-out infinite;
+      filter:drop-shadow(0 22px 34px rgba(70,45,35,.13));
+      animation:scrollBreath 3.2s ease-in-out infinite;
     }
 
     .wedding-scroll:hover{
@@ -1293,19 +1374,17 @@
       position:absolute;
       left:50%;
       width:min(610px,82vw);
-      height:42px;
+      height:32px;
       transform:translateX(-50%);
       border-radius:999px;
       z-index:5;
       background:
-        radial-gradient(circle at 20% 28%, rgba(255,255,255,.24), transparent 18%),
-        linear-gradient(180deg,#B13A34 0%,#8C1F28 42%,#6E151F 100%);
-      border:1px solid rgba(200,164,92,.62);
+        linear-gradient(90deg,#4f261b 0%,#7a3b29 48%,#4a2218 100%);
+      border:1px solid rgba(200,164,92,.34);
       box-shadow:
-        inset 0 0 0 1px rgba(255,255,255,.18),
-        inset 0 10px 18px rgba(255,255,255,.08),
-        inset 0 -12px 18px rgba(55,25,15,.20),
-        0 14px 30px rgba(70,45,35,.18);
+        inset 0 1px 2px rgba(255,255,255,.16),
+        inset 0 -8px 14px rgba(45,20,12,.22),
+        0 12px 24px rgba(70,45,35,.14);
       transition:top 1.35s cubic-bezier(.22,1,.36,1);
     }
 
@@ -1314,21 +1393,20 @@
       content:"";
       position:absolute;
       top:50%;
-      width:64px;
-      height:64px;
+      width:46px;
+      height:46px;
       border-radius:999px;
       transform:translateY(-50%);
       background:
-        radial-gradient(circle at 35% 28%, rgba(255,255,255,.34), transparent 28%),
-        linear-gradient(180deg,#D0A059,#8C5B31 68%,#5F371F);
-      border:1px solid rgba(200,164,92,.78);
+        linear-gradient(180deg,#9f6b3a 0%,#6f3b24 70%,#4a2418 100%);
+      border:1px solid rgba(200,164,92,.46);
       box-shadow:
-        inset 0 0 0 1px rgba(255,255,255,.18),
-        0 10px 22px rgba(70,45,35,.16);
+        inset 0 1px 2px rgba(255,255,255,.16),
+        0 8px 18px rgba(70,45,35,.13);
     }
 
-    .scroll-rod::before{left:-28px;}
-    .scroll-rod::after{right:-28px;}
+    .scroll-rod::before{left:-20px;}
+    .scroll-rod::after{right:-20px;}
 
     .scroll-top-rod{
       top:142px;
@@ -1373,7 +1451,7 @@
       padding:48px 34px 38px;
       opacity:0;
       transform:translateY(16px);
-      transition:opacity .75s ease .85s, transform .75s ease .85s;
+      transition:opacity .45s ease .05s, transform .45s ease .05s;
     }
 
     .scroll-seal{
@@ -1493,13 +1571,13 @@
       .scroll-stage{min-height:560px;}
       .wedding-scroll{width:min(360px,92vw);height:460px;}
       .scroll-paper{top:142px;width:min(268px,70vw);height:34px;}
-      .scroll-rod{width:min(310px,80vw);height:34px;}
-      .scroll-rod::before,.scroll-rod::after{width:48px;height:48px;}
-      .scroll-rod::before{left:-22px;}
-      .scroll-rod::after{right:-22px;}
-      .scroll-top-rod{top:126px;}
+      .scroll-rod{width:min(310px,80vw);height:28px;}
+      .scroll-rod::before,.scroll-rod::after{width:36px;height:36px;}
+      .scroll-rod::before{left:-16px;}
+      .scroll-rod::after{right:-16px;}
+      .scroll-top-rod{top:128px;}
       .scroll-bottom-rod{top:154px;}
-      .closed-emblem{top:143px;width:46px;height:46px;font-size:22px;}
+      .closed-emblem{top:142px;width:42px;height:42px;font-size:20px;}
       .scroll-hint{top:calc(100% + 14px);bottom:auto;font-size:13px;padding:9px 14px;letter-spacing:.08em;}
       .scroll-content{padding:38px 20px 28px;gap:6px;}
       .scroll-seal{width:48px;height:48px;font-size:24px;}
@@ -1522,6 +1600,46 @@
       .section{padding:72px 16px}
       .countdown{grid-template-columns:repeat(2,1fr)}
       .profile-grid,.info-grid{grid-template-columns:1fr}
+      .profile-card{
+        min-height:auto;
+        padding:30px 24px 34px;
+        border-radius:34px;
+        grid-template-columns:1fr;
+        gap:18px;
+        text-align:center;
+        overflow:hidden;
+      }
+      .profile-card:nth-child(even){
+        grid-template-columns:1fr;
+      }
+      .profile-card:nth-child(even) .profile-figure,
+      .profile-card:nth-child(even) .profile-content{
+        order:initial;
+      }
+      .profile-card:nth-child(even) .profile-content,
+      .profile-content{
+        text-align:center;
+        align-items:center;
+      }
+      .profile-figure{
+        min-height:250px;
+        place-items:end center;
+      }
+      .profile-png{
+        width:min(235px,82vw);
+        max-height:270px;
+      }
+      .profile-name{
+        font-size:46px;
+      }
+      .profile-name::after,
+      .profile-card:nth-child(even) .profile-name::after{
+        margin:13px auto 0;
+      }
+      .profile-line.quote{
+        font-size:17px;
+        line-height:1.95;
+      }
       .timeline{padding-left:18px}
       .story-item{padding:22px 18px 22px 24px}
       .hero::before{width:370px;height:370px}
@@ -1610,7 +1728,7 @@
         <div class="scroll-rod scroll-bottom-rod" aria-hidden="true"></div>
         <div class="closed-emblem" aria-hidden="true">囍</div>
 
-        <div class="scroll-hint">♡ 點擊展開我們的喜帖 ♡</div>
+        <div class="scroll-hint">♡ 點擊收下我們的幸福 ♡</div>
       </button>
     </div>
   </div>
@@ -1663,17 +1781,29 @@
   <section class="section fade-up">
     <div class="profile-grid">
       <article class="profile-card">
-        <div class="profile-photo">Tim<br>照片</div>
-        <div class="profile-name">Tim</div>
-        <p class="profile-line">🏹 射手座</p>
-        <p class="profile-line">做妳自己，我來愛妳</p>
+        <div class="profile-figure">
+          <img class="profile-png" src="./tim.png" alt="Tim" onload="this.nextElementSibling.style.display='none'" onerror="this.style.display='none'">
+          <span>Tim PNG<br>照片預留</span>
+        </div>
+
+        <div class="profile-content">
+          <div class="profile-name">Tim</div>
+          <div class="profile-mini">🏹 射手座</div>
+          <p class="profile-line quote">「做妳自己，我來愛妳。」</p>
+        </div>
       </article>
 
       <article class="profile-card">
-        <div class="profile-photo">Aries<br>照片</div>
-        <div class="profile-name">Aries</div>
-        <p class="profile-line">🐑 牡羊座</p>
-        <p class="profile-line">做你的避風港，也陪你闖世界。</p>
+        <div class="profile-figure">
+          <img class="profile-png" src="./aries.png" alt="Aries" onload="this.nextElementSibling.style.display='none'" onerror="this.style.display='none'">
+          <span>Aries PNG<br>照片預留</span>
+        </div>
+
+        <div class="profile-content">
+          <div class="profile-name">Aries</div>
+          <div class="profile-mini">🐑 牡羊座</div>
+          <p class="profile-line quote">「做你的避風港，也陪你闖世界。」</p>
+        </div>
       </article>
     </div>
   </section>
@@ -1946,7 +2076,7 @@
       setTimeout(() => {
         enterScreen.classList.add('hide');
         document.body.classList.remove('locked');
-      }, 2850);
+      }, 1150);
     }
 
     enterBtn.addEventListener('click', openInvitation);

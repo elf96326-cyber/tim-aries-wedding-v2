@@ -824,7 +824,11 @@
       border-radius:34px;
       border:1px solid rgba(200,164,92,.42);
       background:
-        linear-gradient(90deg,rgba(248,242,232,.72) 0 34%,rgba(255,252,248,.76) 34% 100%);
+        linear-gradient(
+          180deg,
+          rgba(255,255,255,.82),
+          rgba(252,248,242,.90)
+        );
       box-shadow:var(--shadow);
       backdrop-filter:blur(16px);
       transition:transform .35s ease, box-shadow .35s ease;
@@ -841,7 +845,7 @@
       background:transparent;
       padding:0;
       display:grid;
-      grid-template-columns:34% 1fr;
+      grid-template-columns:42% 58%;
       align-items:stretch;
       text-align:left;
       color:inherit;
@@ -850,24 +854,20 @@
     }
 
     .chapter-visual{
-      min-height:230px;
+      min-height:330px;
       display:grid;
       place-items:center;
       padding:26px;
-      background:
-        radial-gradient(circle at 30% 30%,rgba(255,255,255,.72),transparent 32%),
-        radial-gradient(circle at 78% 82%,rgba(200,164,92,.18),transparent 24%),
-        linear-gradient(135deg,rgba(255,255,255,.60),rgba(248,242,232,.72)),
-        repeating-linear-gradient(45deg,rgba(200,164,92,.07) 0 1px,transparent 1px 14px);
-      border-right:1px solid rgba(200,164,92,.28);
+      background:transparent;
+      border-right:0;
     }
 
     .chapter-photo{
-      width:min(210px,86%);
+      width:min(320px,98%);
       aspect-ratio:4/3;
       transform:rotate(-3deg);
-      border:10px solid rgba(255,255,255,.92);
-      border-bottom-width:28px;
+      border:8px solid rgba(255,255,255,.96);
+      border-bottom-width:16px;
       background:
         linear-gradient(135deg,rgba(255,255,255,.76),rgba(248,242,232,.78)),
         repeating-linear-gradient(45deg,rgba(200,164,92,.08) 0 1px,transparent 1px 12px);
@@ -886,8 +886,8 @@
       position:absolute;
       top:-22px;
       left:50%;
-      width:72px;
-      height:24px;
+      width:58px;
+      height:18px;
       transform:translateX(-50%) rotate(2deg);
       background:rgba(200,164,92,.24);
       box-shadow:0 4px 10px rgba(70,45,35,.08);
@@ -952,8 +952,9 @@
       font-weight:300;
     }
 .chapter-expand{
-  padding:0 0 24px;
+  padding:0 0 32px;
   text-align:center;
+  background:transparent;
 }
 .chapter-bottom-toggle{
   border:1px solid rgba(200,164,92,.58);

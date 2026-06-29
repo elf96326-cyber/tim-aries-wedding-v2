@@ -659,7 +659,7 @@
     .profile-grid{
       display:grid;
       gap:70px;
-      max-width:760px;
+      max-width:680px;
       margin:0 auto;
     }
 
@@ -1863,7 +1863,7 @@
 
     /* 人物介紹區｜推薦版：桌機雜誌風、手機人物上方 */
     .profile-grid{
-      max-width:760px;
+      max-width:680px;
       gap:82px;
       overflow:visible;
     }
@@ -2013,7 +2013,270 @@
       }
     }
 
-  </style>
+
+    /* 人物介紹區｜修正版：男生右側、女生左側，照片等高 */
+    .profile-card{
+      min-height:360px;
+      padding:52px 52px 50px;
+      overflow:visible;
+    }
+
+    .profile-content{
+      width:52%;
+      text-align:center;
+      align-items:center;
+    }
+
+    .profile-card:first-child .profile-figure{
+      right:-46px;
+      left:auto;
+      bottom:-44px;
+      width:50%;
+    }
+
+    .profile-card:first-child .profile-content{
+      margin-left:0;
+      margin-right:auto;
+      text-align:left;
+      align-items:flex-start;
+    }
+
+    .profile-card:nth-child(even) .profile-figure{
+      left:-46px;
+      right:auto;
+      bottom:-44px;
+      width:50%;
+    }
+
+    .profile-card:nth-child(even) .profile-content{
+      width:52%;
+      margin-left:auto;
+      margin-right:0;
+      text-align:center;
+      align-items:center;
+    }
+
+    .profile-card:nth-child(even) .profile-name::after{
+      margin-left:auto;
+    }
+
+    .profile-png{
+      height:430px;
+      width:auto;
+      max-width:430px;
+      max-height:none;
+      object-fit:contain;
+      object-position:bottom center;
+    }
+
+    .profile-card:first-child .profile-png,
+    .profile-card:last-child .profile-png{
+      transform:translateX(0);
+    }
+
+    @media(max-width:760px){
+      .profile-card{
+        min-height:auto;
+        padding:0 24px 34px;
+        display:flex;
+        flex-direction:column;
+        align-items:center;
+        text-align:center;
+        overflow:visible;
+        margin-top:74px;
+      }
+
+      .profile-content,
+      .profile-card:nth-child(even) .profile-content{
+        width:100%;
+        margin-left:0;
+        margin-right:0;
+        text-align:center;
+        align-items:center;
+        order:2;
+      }
+
+      .profile-figure,
+      .profile-card:first-child .profile-figure,
+      .profile-card:nth-child(even) .profile-figure{
+        position:relative;
+        right:auto;
+        left:auto;
+        bottom:auto;
+        width:100%;
+        order:1;
+        margin:-82px auto 4px;
+        display:grid;
+        place-items:center;
+      }
+
+      .profile-png{
+        height:300px;
+        width:auto;
+        max-width:88vw;
+        max-height:none;
+        object-fit:contain;
+        object-position:bottom center;
+      }
+
+      .profile-name::after,
+      .profile-card:nth-child(even) .profile-name::after{
+        margin:12px auto 0;
+      }
+    }
+
+  
+
+    /* 人物介紹區｜桌機修正：卡片再縮窄，PNG 底部切齊卡片 */
+    @media(min-width:761px){
+      .profile-grid{
+        max-width:690px;
+        gap:90px;
+        margin:0 auto;
+        overflow:visible;
+      }
+
+      .profile-card{
+        min-height:350px;
+        padding:48px 46px 48px;
+        border-radius:38px;
+        overflow:visible;
+      }
+
+      .profile-content{
+        width:58%;
+      }
+
+      .profile-card:first-child .profile-figure{
+        right:-72px;
+        left:auto;
+        bottom:0;
+        width:54%;
+      }
+
+      .profile-card:nth-child(even) .profile-figure{
+        left:-72px;
+        right:auto;
+        bottom:0;
+        width:54%;
+      }
+
+      .profile-figure{
+        place-items:end center;
+      }
+
+      .profile-figure::after{
+        bottom:4px;
+      }
+
+      .profile-png{
+        height:405px;
+        width:auto;
+        max-width:none;
+        max-height:none;
+        object-fit:contain;
+        object-position:bottom center;
+        margin-bottom:0;
+      }
+
+      .profile-card:first-child .profile-png,
+      .profile-card:last-child .profile-png{
+        transform:translateX(0);
+      }
+    }
+
+
+    /* 人物介紹區｜最終微調：卡片更窄、文字置中、人物底部切齊 */
+    @media(min-width:761px){
+      .profile-grid{
+        max-width:620px !important;
+        gap:96px !important;
+        margin:0 auto !important;
+        overflow:visible !important;
+      }
+
+      .profile-card{
+        min-height:345px !important;
+        padding:46px 38px 46px !important;
+        border-radius:38px !important;
+        overflow:visible !important;
+      }
+
+      .profile-content,
+      .profile-card:first-child .profile-content,
+      .profile-card:nth-child(even) .profile-content{
+        width:54% !important;
+        text-align:center !important;
+        align-items:center !important;
+        position:relative !important;
+        z-index:3 !important;
+      }
+
+      .profile-card:first-child .profile-content{
+        margin-left:0 !important;
+        margin-right:auto !important;
+      }
+
+      .profile-card:nth-child(even) .profile-content{
+        margin-left:auto !important;
+        margin-right:0 !important;
+      }
+
+      .profile-name::after,
+      .profile-card:first-child .profile-name::after,
+      .profile-card:nth-child(even) .profile-name::after{
+        margin:16px auto 0 !important;
+      }
+
+      .profile-line.quote{
+        max-width:300px !important;
+        text-align:center !important;
+        margin-left:auto !important;
+        margin-right:auto !important;
+      }
+
+      .profile-figure,
+      .profile-card:first-child .profile-figure,
+      .profile-card:nth-child(even) .profile-figure{
+        width:56% !important;
+        bottom:0 !important;
+        min-height:0 !important;
+        display:grid !important;
+        place-items:end center !important;
+        pointer-events:none !important;
+      }
+
+      .profile-card:first-child .profile-figure{
+        right:-78px !important;
+        left:auto !important;
+      }
+
+      .profile-card:nth-child(even) .profile-figure{
+        left:-78px !important;
+        right:auto !important;
+      }
+
+      .profile-figure::after{
+        bottom:2px !important;
+        width:70% !important;
+      }
+
+      .profile-png{
+        height:398px !important;
+        width:auto !important;
+        max-width:none !important;
+        max-height:none !important;
+        object-fit:contain !important;
+        object-position:bottom center !important;
+        margin-bottom:0 !important;
+      }
+
+      .profile-card:first-child .profile-png,
+      .profile-card:last-child .profile-png{
+        transform:translateX(0) !important;
+      }
+    }
+</style>
 </head>
 
 <body class="locked">

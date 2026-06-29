@@ -268,7 +268,7 @@
     .open-hint{
       position:absolute;
       left:50%;
-      bottom:38px;
+      bottom:64px;
       transform:translateX(-50%);
       z-index:8;
       padding:10px 18px;
@@ -1209,7 +1209,305 @@
       to{transform:translateY(105vh) rotate(360deg);opacity:0}
     }
 
+
+
+    /* 中式卷軸開場 V3：直向往下展開 */
+    .scroll-stage{
+      display:grid;
+      place-items:center;
+      width:100%;
+      min-height:560px;
+      perspective:1200px;
+    }
+
+    .wedding-scroll{
+      position:relative;
+      width:min(720px,92vw);
+      height:540px;
+      border:0;
+      padding:0;
+      background:transparent;
+      cursor:pointer;
+      color:var(--deep);
+      font-family:inherit;
+      filter:drop-shadow(0 28px 42px rgba(70,45,35,.16));
+      animation:scrollBreath 2.8s ease-in-out infinite;
+    }
+
+    .wedding-scroll:hover{
+      animation-play-state:paused;
+      transform:translateY(-6px) scale(1.01);
+    }
+
+    .scroll-paper{
+      position:absolute;
+      left:50%;
+      top:164px;
+      width:min(520px,72vw);
+      height:42px;
+      transform:translateX(-50%);
+      transform-origin:top center;
+      overflow:hidden;
+      z-index:2;
+      border-left:1px solid rgba(200,164,92,.30);
+      border-right:1px solid rgba(200,164,92,.30);
+      background:
+        radial-gradient(circle at 18% 16%, rgba(255,255,255,.72), transparent 26%),
+        radial-gradient(circle at 88% 84%, rgba(200,164,92,.10), transparent 30%),
+        linear-gradient(180deg,rgba(255,252,246,.98),rgba(248,239,222,.98));
+      box-shadow:
+        inset 0 0 0 1px rgba(255,255,255,.50),
+        inset 0 18px 32px rgba(120,75,35,.05),
+        0 18px 38px rgba(70,45,35,.10);
+      transition:
+        height 1.35s cubic-bezier(.22,1,.36,1),
+        top 1.35s cubic-bezier(.22,1,.36,1);
+    }
+
+    .scroll-paper::before{
+      content:"";
+      position:absolute;
+      inset:0;
+      opacity:.24;
+      background-image:
+        linear-gradient(45deg, rgba(200,164,92,.14) 1px, transparent 1px),
+        linear-gradient(-45deg, rgba(140,31,40,.045) 1px, transparent 1px),
+        radial-gradient(rgba(140,31,40,.08) 1px, transparent 1px);
+      background-size:34px 34px,34px 34px,56px 56px;
+      pointer-events:none;
+    }
+
+    .scroll-paper::after{
+      content:"";
+      position:absolute;
+      inset:18px 22px;
+      border:1px solid rgba(200,164,92,.34);
+      opacity:0;
+      transform:scaleY(.72);
+      transform-origin:top center;
+      transition:opacity .7s ease .65s, transform .7s ease .65s;
+      pointer-events:none;
+    }
+
+    .scroll-rod{
+      position:absolute;
+      left:50%;
+      width:min(610px,82vw);
+      height:42px;
+      transform:translateX(-50%);
+      border-radius:999px;
+      z-index:5;
+      background:
+        radial-gradient(circle at 20% 28%, rgba(255,255,255,.24), transparent 18%),
+        linear-gradient(180deg,#B13A34 0%,#8C1F28 42%,#6E151F 100%);
+      border:1px solid rgba(200,164,92,.62);
+      box-shadow:
+        inset 0 0 0 1px rgba(255,255,255,.18),
+        inset 0 10px 18px rgba(255,255,255,.08),
+        inset 0 -12px 18px rgba(55,25,15,.20),
+        0 14px 30px rgba(70,45,35,.18);
+      transition:top 1.35s cubic-bezier(.22,1,.36,1);
+    }
+
+    .scroll-rod::before,
+    .scroll-rod::after{
+      content:"";
+      position:absolute;
+      top:50%;
+      width:64px;
+      height:64px;
+      border-radius:999px;
+      transform:translateY(-50%);
+      background:
+        radial-gradient(circle at 35% 28%, rgba(255,255,255,.34), transparent 28%),
+        linear-gradient(180deg,#D0A059,#8C5B31 68%,#5F371F);
+      border:1px solid rgba(200,164,92,.78);
+      box-shadow:
+        inset 0 0 0 1px rgba(255,255,255,.18),
+        0 10px 22px rgba(70,45,35,.16);
+    }
+
+    .scroll-rod::before{left:-28px;}
+    .scroll-rod::after{right:-28px;}
+
+    .scroll-top-rod{
+      top:142px;
+    }
+
+    .scroll-bottom-rod{
+      top:178px;
+      z-index:4;
+    }
+
+    .closed-emblem{
+      position:absolute;
+      left:50%;
+      top:163px;
+      z-index:8;
+      width:54px;
+      height:54px;
+      transform:translate(-50%,-50%);
+      border-radius:999px;
+      display:grid;
+      place-items:center;
+      color:#fff8f2;
+      background:
+        radial-gradient(circle at 34% 26%, rgba(255,255,255,.22), transparent 28%),
+        linear-gradient(180deg,#A82C38,#7D1D27);
+      border:1px solid rgba(200,164,92,.68);
+      box-shadow:0 12px 24px rgba(140,31,40,.18);
+      font-size:26px;
+      font-weight:700;
+      transition:opacity .45s ease, transform .65s cubic-bezier(.22,1,.36,1);
+    }
+
+    .scroll-content{
+      position:absolute;
+      inset:0;
+      z-index:2;
+      display:flex;
+      flex-direction:column;
+      align-items:center;
+      justify-content:center;
+      gap:8px;
+      padding:48px 34px 38px;
+      opacity:0;
+      transform:translateY(16px);
+      transition:opacity .75s ease .85s, transform .75s ease .85s;
+    }
+
+    .scroll-seal{
+      width:58px;
+      height:58px;
+      border-radius:999px;
+      display:grid;
+      place-items:center;
+      color:#fff8f2;
+      background:linear-gradient(180deg,#A82C38,#7D1D27);
+      font-size:28px;
+      font-weight:700;
+      box-shadow:0 12px 26px rgba(140,31,40,.20), inset 0 0 0 1px rgba(255,255,255,.20);
+      margin-bottom:8px;
+    }
+
+    .scroll-kicker{
+      font-family:'Noto Sans TC',sans-serif;
+      font-size:12px;
+      letter-spacing:.24em;
+      color:var(--gold);
+      text-transform:uppercase;
+      font-weight:700;
+    }
+
+    .scroll-title{
+      font-size:clamp(34px,6vw,58px);
+      letter-spacing:.18em;
+      color:var(--rose);
+      font-weight:600;
+      line-height:1.15;
+    }
+
+    .scroll-names{
+      font-family:'Great Vibes',cursive;
+      font-size:clamp(42px,7vw,72px);
+      line-height:1;
+      color:var(--deep);
+      margin-top:6px;
+    }
+
+    .scroll-date{
+      font-family:'Noto Sans TC',sans-serif;
+      font-size:13px;
+      letter-spacing:.16em;
+      color:rgba(64,51,47,.74);
+      margin-top:4px;
+    }
+
+    .scroll-hint{
+      position:absolute;
+      left:50%;
+      bottom:70px;
+      transform:translateX(-50%);
+      z-index:8;
+      padding:10px 18px;
+      border-radius:999px;
+      border:1px solid rgba(200,164,92,.46);
+      background:rgba(255,255,255,.72);
+      backdrop-filter:blur(12px);
+      color:var(--rose);
+      font-family:'Noto Sans TC',sans-serif;
+      font-size:15px;
+      font-weight:700;
+      letter-spacing:.12em;
+      white-space:nowrap;
+      box-shadow:0 12px 28px rgba(70,45,35,.10);
+      animation:hintGlow 2.2s ease-in-out infinite;
+      transition:opacity .45s ease, transform .45s ease;
+    }
+
+    @keyframes scrollBreath{
+      0%,100%{transform:translateY(0) scale(1)}
+      50%{transform:translateY(-8px) scale(1.01)}
+    }
+
+    .enter-screen.opening .wedding-scroll{
+      animation:scrollFloat .9s ease 1.65s forwards;
+    }
+
+    .enter-screen.opening .scroll-paper{
+      height:330px;
+    }
+
+    .enter-screen.opening .scroll-bottom-rod{
+      top:494px;
+    }
+
+    .enter-screen.opening .scroll-paper::after{
+      opacity:1;
+      transform:scaleY(1);
+    }
+
+    .enter-screen.opening .scroll-content{
+      opacity:1;
+      transform:translateY(0);
+    }
+
+    .enter-screen.opening .closed-emblem{
+      opacity:0;
+      transform:translate(-50%,-50%) scale(.7);
+    }
+
+    .enter-screen.opening .scroll-hint{
+      opacity:0;
+      transform:translateX(-50%) translateY(14px);
+    }
+
+    @keyframes scrollFloat{
+      to{transform:translateY(8px) scale(.98); opacity:.94}
+    }
+
     @media(max-width:760px){
+
+      .scroll-stage{min-height:480px;}
+      .wedding-scroll{width:min(360px,92vw);height:460px;}
+      .scroll-paper{top:142px;width:min(268px,70vw);height:34px;}
+      .scroll-rod{width:min(310px,80vw);height:34px;}
+      .scroll-rod::before,.scroll-rod::after{width:48px;height:48px;}
+      .scroll-rod::before{left:-22px;}
+      .scroll-rod::after{right:-22px;}
+      .scroll-top-rod{top:126px;}
+      .scroll-bottom-rod{top:154px;}
+      .closed-emblem{top:143px;width:46px;height:46px;font-size:22px;}
+      .scroll-hint{bottom:54px;font-size:13px;padding:9px 14px;letter-spacing:.08em;}
+      .scroll-content{padding:38px 20px 28px;gap:6px;}
+      .scroll-seal{width:48px;height:48px;font-size:24px;}
+      .scroll-kicker{font-size:10px;letter-spacing:.18em;}
+      .scroll-title{font-size:34px;letter-spacing:.14em;}
+      .scroll-names{font-size:42px;}
+      .scroll-date{font-size:10px;letter-spacing:.08em;line-height:1.6;}
+      .enter-screen.opening .scroll-paper{height:270px;}
+      .enter-screen.opening .scroll-bottom-rod{top:412px;}
+
       .love-card{
         border-radius:30px;
       }
@@ -1294,22 +1592,23 @@
 
 <body class="locked">
   <div class="enter-screen" id="enterScreen">
-    <div class="envelope-stage" id="envelopeStage">
-      <button class="envelope" id="enterBtn" aria-label="開啟婚禮邀請函">
-        <div class="letter-stack">
-          <div class="popup-card popup-photo" aria-hidden="true"></div>
-
-          <div class="popup-card popup-invite">
-            <div class="letter-small">Wedding Invitation</div>
-            <div class="letter-names">Tim & Aries</div>
-            <div class="letter-date">2026.12.19</div>
+    <div class="scroll-stage" id="envelopeStage">
+      <button class="wedding-scroll" id="enterBtn" aria-label="開啟婚禮卷軸邀請函">
+        <div class="scroll-paper">
+          <div class="scroll-content">
+            <div class="scroll-seal">囍</div>
+            <div class="scroll-kicker">Wedding Invitation</div>
+            <div class="scroll-title">莊滿禛心</div>
+            <div class="scroll-names">Tim & Aries</div>
+            <div class="scroll-date">2026.12.19 · Grand Victoria Hotel</div>
           </div>
         </div>
-        <div class="envelope-back"></div>
-        <div class="envelope-flap"></div>
-        <div class="envelope-front"></div>
-        <div class="envelope-seal">♡</div>
-        <div class="open-hint">♡ 點擊收下我們的幸福 ♡</div>
+
+        <div class="scroll-rod scroll-top-rod" aria-hidden="true"></div>
+        <div class="scroll-rod scroll-bottom-rod" aria-hidden="true"></div>
+        <div class="closed-emblem" aria-hidden="true">囍</div>
+
+        <div class="scroll-hint">♡ 點擊展開我們的喜帖 ♡</div>
       </button>
     </div>
   </div>
@@ -1645,7 +1944,7 @@
       setTimeout(() => {
         enterScreen.classList.add('hide');
         document.body.classList.remove('locked');
-      }, 1450);
+      }, 2850);
     }
 
     enterBtn.addEventListener('click', openInvitation);

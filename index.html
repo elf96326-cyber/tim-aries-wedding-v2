@@ -509,7 +509,7 @@
     .section{
       max-width:1060px;
       margin:0 auto;
-      padding:84px 20px;
+      padding:56px 20px;
     }
 
     .section-title{
@@ -656,25 +656,28 @@
 
     .love-card strong{font-size:clamp(52px,12vw,90px)}
 
+    /* ===== 人物介紹區｜整理版（只保留這一組） ===== */
     .profile-grid{
       display:grid;
-      gap:70px;
-      max-width:680px;
+      gap:96px;
+      max-width:620px;
       margin:0 auto;
+      overflow:visible;
     }
 
     .profile-card{
       position:relative;
       overflow:visible;
-      min-height:380px;
-      padding:56px 56px 54px;
-      border-radius:40px;
+      min-height:345px;
+      padding:46px 38px;
+      border-radius:38px;
       background:
         radial-gradient(circle at 10% 16%, rgba(200,164,92,.10), transparent 30%),
         linear-gradient(180deg,rgba(255,255,255,.88),rgba(252,248,242,.76));
       border:1px solid var(--line);
       box-shadow:var(--shadow);
       display:block;
+      text-align:center;
     }
 
     .profile-card>*{
@@ -683,46 +686,53 @@
     }
 
     .profile-content{
-      width:58%;
+      width:54%;
       display:flex;
       flex-direction:column;
-      align-items:flex-start;
-      text-align:left;
+      align-items:center;
+      text-align:center;
       position:relative;
-      z-index:3;
+      z-index:4;
+    }
+
+    .profile-card:first-child .profile-content{
+      margin-left:0;
+      margin-right:auto;
     }
 
     .profile-card:nth-child(even) .profile-content{
-      margin-left:0;
-      text-align:left;
-      align-items:flex-start;
+      margin-left:auto;
+      margin-right:0;
+      text-align:center;
+      align-items:center;
     }
 
     .profile-figure{
       position:absolute;
-      right:-34px;
-      bottom:-34px;
-      width:43%;
+      right:-78px;
+      left:auto;
+      bottom:0;
+      width:56%;
       min-height:0;
       display:grid;
       place-items:end center;
       isolation:isolate;
-      z-index:2;
+      z-index:3;
       pointer-events:none;
     }
 
     .profile-card:nth-child(even) .profile-figure{
-      right:-26px;
-      left:auto;
-      bottom:-36px;
+      left:-78px;
+      right:auto;
+      bottom:0;
     }
 
     .profile-figure::after{
       content:"";
       position:absolute;
       left:50%;
-      bottom:18px;
-      width:72%;
+      bottom:2px;
+      width:70%;
       height:34px;
       transform:translateX(-50%);
       border-radius:50%;
@@ -733,42 +743,15 @@
 
     .profile-png{
       display:block;
-      width:min(390px,100%);
-      max-height:470px;
+      height:398px;
+      width:auto;
+      max-width:none;
+      max-height:none;
       object-fit:contain;
       object-position:bottom center;
       margin-bottom:0;
       filter:drop-shadow(0 24px 35px rgba(70,45,35,.16));
-    }
-
-    .profile-card:first-child .profile-png{
-      transform:translateX(6px);
-    }
-
-    .profile-card:last-child .profile-png{
       transform:translateX(0);
-    }
-
-    .profile-figure span{
-      position:absolute;
-      left:50%;
-      top:50%;
-      transform:translate(-50%,-50%);
-      width:170px;
-      height:170px;
-      border-radius:999px;
-      border:1px dashed rgba(200,164,92,.38);
-      display:grid;
-      place-items:center;
-      text-align:center;
-      font-family:'Noto Sans TC',sans-serif;
-      color:rgba(140,31,40,.45);
-      font-size:12px;
-      letter-spacing:.12em;
-      line-height:1.8;
-      background:
-        linear-gradient(135deg,rgba(255,255,255,.70),rgba(248,242,232,.60)),
-        repeating-linear-gradient(45deg,rgba(200,164,92,.08) 0 1px,transparent 1px 12px);
     }
 
     .profile-name{
@@ -784,12 +767,8 @@
       display:block;
       width:56px;
       height:1px;
-      margin:16px 0 0;
+      margin:16px auto 0;
       background:rgba(200,164,92,.60);
-    }
-
-    .profile-card:nth-child(even) .profile-name::after{
-      margin-left:0;
     }
 
     .profile-line{
@@ -799,13 +778,14 @@
     }
 
     .profile-line.quote{
-      margin-top:28px;
+      max-width:300px;
+      margin:28px auto 0;
       line-height:2;
       font-size:20px;
       color:var(--deep);
       font-style:italic;
       letter-spacing:.06em;
-      max-width:520px;
+      text-align:center;
     }
 
     .profile-mini{
@@ -1610,7 +1590,7 @@
         background-position:center 48%;
       }
       .envelope-stage{}.envelope{width:min(360px,86vw);height:238px}.letter-stack{width:340px;height:280px;bottom:20px}.popup-photo{width:220px;height:140px;left:0;top:0;border-width:4px;transform:rotate(-5deg);background-position:30% center}.popup-invite{width:220px;height:140px;right:-10px;top:115px;transform:rotate(5deg);padding:10px}.letter-small{font-size:7px;letter-spacing:.1em}.letter-names{font-size:30px;margin:10px 0 6px}.letter-date{font-size:8.5px;letter-spacing:.09em}.envelope-seal{width:54px;height:54px;font-size:25px}.open-hint{bottom:50px;font-size:13px;padding:9px 14px;letter-spacing:.08em}.enter-screen.opening .letter-stack{transform:translateX(-50%) translateY(-130px) scale(1.05)}
-      .section{padding:72px 16px}
+      .section{padding:46px 16px}
       .countdown{grid-template-columns:repeat(2,1fr)}
       .profile-grid,.info-grid{grid-template-columns:1fr}
       .profile-card{
@@ -1769,7 +1749,7 @@
       }
 
       .profile-card:last-child .profile-png{
-        transform:translateX(0);
+        transform:translateX(-28px);
       }
 
       .profile-name{
@@ -1861,360 +1841,48 @@
     }
   
 
-    /* 人物介紹區｜推薦版：桌機雜誌風、手機人物上方 */
-    .profile-grid{
-      max-width:680px;
-      gap:82px;
-      overflow:visible;
-    }
 
-    .profile-card{
-      position:relative;
-      overflow:visible;
-      min-height:360px;
-      padding:52px 52px 50px;
-      display:block;
-    }
 
-    .profile-content{
-      width:58%;
-      position:relative;
-      z-index:3;
-    }
-
-    .profile-card:nth-child(even) .profile-content{
-      width:58%;
-      margin-left:0;
-      text-align:left;
-      align-items:flex-start;
-    }
-
-    .profile-card:nth-child(even) .profile-name::after{
-      margin-left:0;
-    }
-
-    .profile-figure,
-    .profile-card:nth-child(even) .profile-figure{
-      position:absolute;
-      right:-42px;
-      left:auto;
-      bottom:-44px;
-      width:48%;
-      min-height:0;
-      display:grid;
-      place-items:end center;
-      z-index:2;
-      pointer-events:none;
-    }
-
-    .profile-png{
-      width:min(410px,100%);
-      max-height:490px;
-      object-fit:contain;
-      object-position:bottom center;
-      margin-bottom:0;
-      filter:drop-shadow(0 26px 36px rgba(70,45,35,.16));
-    }
-
-    .profile-card:first-child .profile-png,
-    .profile-card:last-child .profile-png{
-      transform:translateX(0);
-    }
-
-    .profile-line.quote{
-      max-width:360px;
-    }
-
+    /* ===== 人物介紹區｜手機版整理版（最終位置修正） ===== */
     @media(max-width:760px){
-      /* 手機版改為：人物在上、文字在下，閱讀最舒服 */
       .profile-grid{
-        gap:64px;
-        max-width:420px;
-        margin:0 auto;
-        overflow:visible;
-      }
-
-      .profile-card{
-        min-height:auto;
-        padding:0 24px 34px;
-        border-radius:34px;
-        display:flex;
-        flex-direction:column;
-        align-items:center;
-        text-align:center;
-        overflow:visible;
-        margin-top:74px;
-      }
-
-      .profile-content,
-      .profile-card:nth-child(even) .profile-content{
-        width:100%;
-        margin-left:0;
-        text-align:center;
-        align-items:center;
-        order:2;
-        z-index:3;
-      }
-
-      .profile-figure,
-      .profile-card:nth-child(even) .profile-figure{
-        position:relative;
-        right:auto;
-        left:auto;
-        bottom:auto;
-        width:100%;
-        min-height:0;
-        order:1;
-        display:grid;
-        place-items:center;
-        margin:-82px auto 4px;
-        z-index:2;
-      }
-
-      .profile-figure::after{
-        bottom:10px;
-        width:58%;
-        height:28px;
-      }
-
-      .profile-png{
-        width:min(270px,76vw);
-        max-height:350px;
-        margin-bottom:-8px;
-        object-fit:contain;
-        object-position:bottom center;
-      }
-
-      .profile-card:first-child .profile-png,
-      .profile-card:last-child .profile-png{
-        transform:translateX(0);
-      }
-
-      .profile-name{
-        font-size:48px;
-        margin-top:4px;
-      }
-
-      .profile-name::after,
-      .profile-card:nth-child(even) .profile-name::after{
-        margin:12px auto 0;
-      }
-
-      .profile-line.quote{
-        max-width:260px;
-        margin-top:22px;
-        font-size:16.5px;
-        line-height:1.9;
-      }
-
-      .profile-mini{
-        font-size:12.5px;
-        padding:8px 16px;
-      }
-    }
-
-
-    /* 人物介紹區｜修正版：男生右側、女生左側，照片等高 */
-    .profile-card{
-      min-height:360px;
-      padding:52px 52px 50px;
-      overflow:visible;
-    }
-
-    .profile-content{
-      width:52%;
-      text-align:center;
-      align-items:center;
-    }
-
-    .profile-card:first-child .profile-figure{
-      right:-46px;
-      left:auto;
-      bottom:-44px;
-      width:50%;
-    }
-
-    .profile-card:first-child .profile-content{
-      margin-left:0;
-      margin-right:auto;
-      text-align:left;
-      align-items:flex-start;
-    }
-
-    .profile-card:nth-child(even) .profile-figure{
-      left:-46px;
-      right:auto;
-      bottom:-44px;
-      width:50%;
-    }
-
-    .profile-card:nth-child(even) .profile-content{
-      width:52%;
-      margin-left:auto;
-      margin-right:0;
-      text-align:center;
-      align-items:center;
-    }
-
-    .profile-card:nth-child(even) .profile-name::after{
-      margin-left:auto;
-    }
-
-    .profile-png{
-      height:430px;
-      width:auto;
-      max-width:430px;
-      max-height:none;
-      object-fit:contain;
-      object-position:bottom center;
-    }
-
-    .profile-card:first-child .profile-png,
-    .profile-card:last-child .profile-png{
-      transform:translateX(0);
-    }
-
-    @media(max-width:760px){
-      .profile-card{
-        min-height:auto;
-        padding:0 24px 34px;
-        display:flex;
-        flex-direction:column;
-        align-items:center;
-        text-align:center;
-        overflow:visible;
-        margin-top:74px;
-      }
-
-      .profile-content,
-      .profile-card:nth-child(even) .profile-content{
-        width:100%;
-        margin-left:0;
-        margin-right:0;
-        text-align:center;
-        align-items:center;
-        order:2;
-      }
-
-      .profile-figure,
-      .profile-card:first-child .profile-figure,
-      .profile-card:nth-child(even) .profile-figure{
-        position:relative;
-        right:auto;
-        left:auto;
-        bottom:auto;
-        width:100%;
-        order:1;
-        margin:-82px auto 4px;
-        display:grid;
-        place-items:center;
-      }
-
-      .profile-png{
-        height:300px;
-        width:auto;
-        max-width:88vw;
-        max-height:none;
-        object-fit:contain;
-        object-position:bottom center;
-      }
-
-      .profile-name::after,
-      .profile-card:nth-child(even) .profile-name::after{
-        margin:12px auto 0;
-      }
-    }
-
-  
-
-    /* 人物介紹區｜桌機修正：卡片再縮窄，PNG 底部切齊卡片 */
-    @media(min-width:761px){
-      .profile-grid{
-        max-width:690px;
-        gap:90px;
-        margin:0 auto;
-        overflow:visible;
-      }
-
-      .profile-card{
-        min-height:350px;
-        padding:48px 46px 48px;
-        border-radius:38px;
-        overflow:visible;
-      }
-
-      .profile-content{
-        width:58%;
-      }
-
-      .profile-card:first-child .profile-figure{
-        right:-72px;
-        left:auto;
-        bottom:0;
-        width:54%;
-      }
-
-      .profile-card:nth-child(even) .profile-figure{
-        left:-72px;
-        right:auto;
-        bottom:0;
-        width:54%;
-      }
-
-      .profile-figure{
-        place-items:end center;
-      }
-
-      .profile-figure::after{
-        bottom:4px;
-      }
-
-      .profile-png{
-        height:405px;
-        width:auto;
-        max-width:none;
-        max-height:none;
-        object-fit:contain;
-        object-position:bottom center;
-        margin-bottom:0;
-      }
-
-      .profile-card:first-child .profile-png,
-      .profile-card:last-child .profile-png{
-        transform:translateX(0);
-      }
-    }
-
-
-    /* 人物介紹區｜最終微調：卡片更窄、文字置中、人物底部切齊 */
-    @media(min-width:761px){
-      .profile-grid{
-        max-width:620px !important;
-        gap:96px !important;
+        max-width:420px !important;
+        width:100% !important;
+        gap:54px !important;
         margin:0 auto !important;
         overflow:visible !important;
       }
 
       .profile-card{
-        min-height:345px !important;
-        padding:46px 38px 46px !important;
-        border-radius:38px !important;
+        width:82% !important;
+        min-height:285px !important;
+        margin:0 auto 56px !important;
+        padding:24px 20px !important;
+        border-radius:34px !important;
+        display:block !important;
+        position:relative !important;
         overflow:visible !important;
+        text-align:center !important;
       }
 
       .profile-content,
       .profile-card:first-child .profile-content,
       .profile-card:nth-child(even) .profile-content{
-        width:54% !important;
+        width:52% !important;
+        margin:0 !important;
+        padding:0 !important;
         text-align:center !important;
         align-items:center !important;
         position:relative !important;
-        z-index:3 !important;
+        z-index:4 !important;
+
+        transform: translateY(22px);   /* ← 新增這一行 */
       }
 
       .profile-card:first-child .profile-content{
-        margin-left:0 !important;
         margin-right:auto !important;
+
+        transform: translate(-15px, 22px);   /* ← 新增 */
       }
 
       .profile-card:nth-child(even) .profile-content{
@@ -2222,393 +1890,134 @@
         margin-right:0 !important;
       }
 
+      .profile-name{
+        font-size:42px !important;
+        margin-bottom:14px !important;
+      }
+
       .profile-name::after,
       .profile-card:first-child .profile-name::after,
       .profile-card:nth-child(even) .profile-name::after{
-        margin:16px auto 0 !important;
+        margin:10px auto 0 !important;
       }
 
       .profile-line.quote{
-        max-width:300px !important;
+        max-width:165px !important;
+        margin:16px auto 0 !important;
+        font-size:15px !important;
+        line-height:1.8 !important;
         text-align:center !important;
-        margin-left:auto !important;
-        margin-right:auto !important;
+      }
+
+      .profile-mini{
+        font-size:12px !important;
+        padding:7px 14px !important;
       }
 
       .profile-figure,
       .profile-card:first-child .profile-figure,
       .profile-card:nth-child(even) .profile-figure{
-        width:56% !important;
+        position:absolute !important;
         bottom:0 !important;
+        width:48% !important;
         min-height:0 !important;
         display:grid !important;
         place-items:end center !important;
+        z-index:3 !important;
         pointer-events:none !important;
+        margin:0 !important;
       }
 
       .profile-card:first-child .profile-figure{
-        right:-78px !important;
+        right:45px !important;
         left:auto !important;
       }
 
       .profile-card:nth-child(even) .profile-figure{
-        left:-78px !important;
+        left:-35px !important;
         right:auto !important;
       }
 
-      .profile-figure::after{
-        bottom:2px !important;
-        width:70% !important;
-      }
-
       .profile-png{
-        height:398px !important;
+        height:365px !important;
         width:auto !important;
         max-width:none !important;
         max-height:none !important;
         object-fit:contain !important;
         object-position:bottom center !important;
         margin-bottom:0 !important;
+        transform:translateX(0) !important;
       }
 
-      .profile-card:first-child .profile-png,
       .profile-card:last-child .profile-png{
-        transform:translateX(0) !important;
+        height:330px !important;
+      }
+
+      .profile-figure::after{
+        bottom:2px !important;
+        width:70% !important;
+        height:26px !important;
       }
     }
 
-/* 人物介紹區｜手機版最終微調：卡片縮窄、人物往內、文字置中 */
-@media(max-width:760px){
-  .profile-grid{
-    max-width:420px !important;
-    width:100% !important;
-    gap:58px !important;
-    margin:0 auto !important;
-    overflow:visible !important;
-  }
 
-  .profile-card{
-    width:82% !important;
-    min-height:330px !important;
-    margin:0 auto 70px !important;
-    padding:34px 22px 34px !important;
-    border-radius:34px !important;
-    display:block !important;
-    position:relative !important;
-    overflow:visible !important;
-    text-align:center !important;
-  }
+    /* ===== 全站區塊間距微調｜讓手機版不要留白太大 ===== */
+    .section{
+      padding:48px 20px !important;
+    }
 
-  .profile-content,
-  .profile-card:first-child .profile-content,
-  .profile-card:nth-child(even) .profile-content{
-    width:58% !important;
-    margin:0 !important;
-    padding:0 !important;
-    text-align:center !important;
-    align-items:center !important;
-    position:relative !important;
-    z-index:3 !important;
-  }
+    .section-sub{
+      margin:0 auto 24px !important;
+    }
 
-  .profile-card:first-child .profile-content{
-    margin-right:auto !important;
-  }
+    .section-en{
+      margin:-8px 0 16px !important;
+    }
 
-  .profile-card:nth-child(even) .profile-content{
-    margin-left:auto !important;
-    margin-right:0 !important;
-  }
+    .profile-grid{
+      gap:56px !important;
+    }
 
-  .profile-figure,
-  .profile-card:first-child .profile-figure,
-  .profile-card:nth-child(even) .profile-figure{
-    position:absolute !important;
-    bottom:0 !important;
-    width:50% !important;
-    min-height:0 !important;
-    display:grid !important;
-    place-items:end center !important;
-    z-index:2 !important;
-    pointer-events:none !important;
-    margin:0 !important;
-  }
+    @media(max-width:760px){
+      .section{
+        padding:34px 16px !important;
+      }
 
-  .profile-card:first-child .profile-figure{
-    right:-14px !important;
-    left:auto !important;
-  }
+      .section-title{
+        margin-bottom:2px !important;
+      }
 
-  .profile-card:nth-child(even) .profile-figure{
-    left:-14px !important;
-    right:auto !important;
-  }
+      .section-en{
+        margin:-8px 0 12px !important;
+      }
 
-  .profile-png{
-    height:330px !important;
-    width:auto !important;
-    max-width:none !important;
-    max-height:none !important;
-    object-fit:contain !important;
-    object-position:bottom center !important;
-    margin-bottom:0 !important;
-  }
+      .section-sub{
+        margin:0 auto 18px !important;
+        line-height:1.85 !important;
+      }
 
-  .profile-card:first-child .profile-png,
-  .profile-card:last-child .profile-png{
-    transform:translateX(0) !important;
-  }
+      .section:has(.countdown-card){
+        padding-top:34px !important;
+        padding-bottom:34px !important;
+      }
 
-  .profile-name{
-    font-size:44px !important;
-  }
+      .section:has(.countdown-card) .section-sub{
+        margin-bottom:18px !important;
+      }
 
-  .profile-name::after,
-  .profile-card:first-child .profile-name::after,
-  .profile-card:nth-child(even) .profile-name::after{
-    margin:12px auto 0 !important;
-  }
+      .profile-grid{
+        gap:28px !important;
+      }
 
-  .profile-line.quote{
-    max-width:190px !important;
-    margin:22px auto 0 !important;
-    text-align:center !important;
-    font-size:15.5px !important;
-    line-height:1.85 !important;
-  }
+      .profile-card{
+        margin:0 auto 28px !important;
+      }
 
-  .profile-mini{
-    font-size:12px !important;
-    padding:7px 14px !important;
-  }
-}
-
-
-
-/* 人物介紹區｜手機版最終修正：Tim 往內、Aries 避開文字 */
-@media(max-width:760px){
-  .profile-grid{
-    max-width:420px !important;
-    width:100% !important;
-    gap:58px !important;
-    margin:0 auto !important;
-    overflow:visible !important;
-  }
-
-  .profile-card{
-    width:82% !important;
-    min-height:318px !important;
-    margin:0 auto 68px !important;
-    padding:32px 20px 32px !important;
-    border-radius:34px !important;
-    display:block !important;
-    position:relative !important;
-    overflow:visible !important;
-    text-align:center !important;
-  }
-
-  .profile-content,
-  .profile-card:first-child .profile-content{
-    width:50% !important;
-    margin:0 !important;
-    padding:0 !important;
-    text-align:center !important;
-    align-items:center !important;
-    position:relative !important;
-    z-index:4 !important;
-  }
-
-  .profile-card:nth-child(even) .profile-content{
-    width:48% !important;
-    margin-left:auto !important;
-    margin-right:0 !important;
-    padding:0 !important;
-    text-align:center !important;
-    align-items:center !important;
-    position:relative !important;
-    z-index:4 !important;
-  }
-
-  .profile-name{
-    font-size:44px !important;
-    margin:0 0 16px !important;
-  }
-
-  .profile-name::after,
-  .profile-card:first-child .profile-name::after,
-  .profile-card:nth-child(even) .profile-name::after{
-    margin:12px auto 0 !important;
-  }
-
-  .profile-mini{
-    font-size:12px !important;
-    padding:7px 14px !important;
-  }
-
-  .profile-line.quote{
-    max-width:160px !important;
-    margin:18px auto 0 !important;
-    text-align:center !important;
-    font-size:15.5px !important;
-    line-height:1.85 !important;
-  }
-
-  .profile-figure,
-  .profile-card:first-child .profile-figure,
-  .profile-card:nth-child(even) .profile-figure{
-    position:absolute !important;
-    bottom:0 !important;
-    min-height:0 !important;
-    display:grid !important;
-    place-items:end center !important;
-    pointer-events:none !important;
-    z-index:3 !important;
-  }
-
-  /* Tim：右側人物往卡片內收 */
-  .profile-card:first-child .profile-figure{
-    right:4px !important;
-    left:auto !important;
-    width:42% !important;
-  }
-
-  /* Aries：左側人物往旁邊退，避免蓋到文字 */
-  .profile-card:nth-child(even) .profile-figure{
-    left:-40px !important;
-    right:auto !important;
-    width:42% !important;
-  }
-
-  .profile-png{
-    height:282px !important;
-    width:auto !important;
-    max-width:none !important;
-    max-height:none !important;
-    object-fit:contain !important;
-    object-position:bottom center !important;
-    margin-bottom:0 !important;
-  }
-
-  .profile-card:first-child .profile-png,
-  .profile-card:last-child .profile-png{
-    transform:translateX(0) !important;
-  }
-}
-
-
-/* ===== 人物介紹區｜手機版位置修正（Tim 往內、Aries 避開文字） ===== */
-@media(max-width:760px){
-  .profile-grid{
-    max-width:420px !important;
-    width:100% !important;
-    gap:58px !important;
-    margin:0 auto !important;
-    overflow:visible !important;
-  }
-
-  .profile-card{
-    width:82% !important;
-    min-height:330px !important;
-    margin:0 auto 70px !important;
-    padding:34px 22px 34px !important;
-    border-radius:34px !important;
-    display:block !important;
-    position:relative !important;
-    overflow:visible !important;
-    text-align:center !important;
-  }
-
-  .profile-content,
-  .profile-card:first-child .profile-content,
-  .profile-card:nth-child(even) .profile-content{
-    width:52% !important;
-    margin:0 !important;
-    padding:0 !important;
-    text-align:center !important;
-    align-items:center !important;
-    position:relative !important;
-    z-index:4 !important;
-  }
-
-  .profile-card:first-child .profile-content{
-    margin-right:auto !important;
-    margin-left:0 !important;
-  }
-
-  .profile-card:nth-child(even) .profile-content{
-    margin-left:auto !important;
-    margin-right:0 !important;
-  }
-
-  .profile-name{
-    font-size:42px !important;
-  }
-
-  .profile-name::after,
-  .profile-card:first-child .profile-name::after,
-  .profile-card:nth-child(even) .profile-name::after{
-    margin:12px auto 0 !important;
-  }
-
-  .profile-line.quote{
-    max-width:165px !important;
-    margin:18px auto 0 !important;
-    text-align:center !important;
-    font-size:15.5px !important;
-    line-height:1.85 !important;
-  }
-
-  .profile-mini{
-    font-size:12px !important;
-    padding:7px 14px !important;
-  }
-
-  .profile-figure,
-  .profile-card:first-child .profile-figure,
-  .profile-card:nth-child(even) .profile-figure{
-    position:absolute !important;
-    bottom:0 !important;
-    width:44% !important;
-    min-height:0 !important;
-    display:grid !important;
-    place-items:end center !important;
-    z-index:3 !important;
-    pointer-events:none !important;
-  }
-
-  /* Tim：往卡片內收，不要貼右邊 */
-  .profile-card:first-child .profile-figure{
-    right:18px !important;
-    left:auto !important;
-  }
-
-  /* Aries：往左邊退一點，避免壓到文字 */
-  .profile-card:nth-child(even) .profile-figure{
-    left:-6px !important;
-    right:auto !important;
-  }
-
-  .profile-png{
-    height:275px !important;
-    width:auto !important;
-    max-width:none !important;
-    max-height:none !important;
-    object-fit:contain !important;
-    object-position:bottom center !important;
-    margin-bottom:0 !important;
-  }
-
-  .profile-card:first-child .profile-png,
-  .profile-card:last-child .profile-png{
-    transform:translateX(0) !important;
-  }
-
-  .profile-figure::after{
-    bottom:2px !important;
-    width:70% !important;
-    height:26px !important;
-  }
-}
+      .story-hint,
+      .gallery-hint{
+        margin-bottom:12px !important;
+      }
+    }
 
 </style>
 </head>
@@ -2681,7 +2090,17 @@
     </div>
   </section>
 
+
+  
   <section class="section fade-up">
+
+  <h2 class="section-title">新郎・新娘</h2>
+  <div class="section-en">Bride & Groom</div>
+  <p class="section-sub">
+    從兩個不同的人，<br>
+    走成了同一個家的模樣。
+  </p>
+
     <div class="profile-grid">
       <article class="profile-card">
         <div class="profile-figure">
@@ -2692,7 +2111,7 @@
         <div class="profile-content">
           <div class="profile-name">Tim</div>
           <div class="profile-mini">🏹 射手座</div>
-          <p class="profile-line quote">「做妳自己，我來愛妳。」</p>
+          <p class="profile-line quote">「做妳自己，<br>我來愛妳。」</p>
         </div>
       </article>
 
@@ -2705,7 +2124,7 @@
         <div class="profile-content">
           <div class="profile-name">Aries</div>
           <div class="profile-mini">🐑 牡羊座</div>
-          <p class="profile-line quote">「做你的避風港，也陪你闖世界。」</p>
+          <p class="profile-line quote">「做你的避風港，<br>也陪你闖世界。」</p>
         </div>
       </article>
     </div>

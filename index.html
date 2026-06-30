@@ -2025,6 +2025,285 @@
       }
     }
 
+/* ===== 祝福留言冊｜Slack / Discord 風格 ===== */
+.blessings-section{
+  max-width:920px;
+}
+
+.message-card{
+  max-width:760px;
+  margin:0 auto;
+  padding:0;
+  border-radius:34px;
+  overflow:hidden;
+  background:rgba(255,252,248,.88);
+  border:1px solid rgba(200,164,92,.30);
+  box-shadow:0 26px 72px rgba(70,45,35,.13);
+}
+
+.message-card-head{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:16px;
+  padding:20px 22px 18px;
+  background:
+    linear-gradient(180deg,rgba(255,255,255,.84),rgba(255,248,242,.72));
+  border-bottom:1px solid rgba(200,164,92,.22);
+}
+
+.message-channel{
+  font-family:'Noto Sans TC',sans-serif;
+  font-size:12px;
+  font-weight:700;
+  letter-spacing:.12em;
+  color:rgba(140,31,40,.72);
+  margin-bottom:4px;
+}
+
+.message-head-title{
+  font-size:18px;
+  letter-spacing:.08em;
+  color:var(--deep);
+  font-weight:600;
+}
+
+.message-count{
+  flex:0 0 auto;
+  padding:8px 13px;
+  border-radius:999px;
+  background:rgba(255,255,255,.72);
+  border:1px solid rgba(200,164,92,.28);
+  font-family:'Noto Sans TC',sans-serif;
+  font-size:12.5px;
+  font-weight:700;
+  color:rgba(64,51,47,.70);
+}
+
+.message-list{
+  height:390px;
+  overflow-y:auto;
+  display:flex;
+  flex-direction:column;
+  padding:10px 22px;
+  background:
+    radial-gradient(circle at 16% 16%, rgba(140,31,40,.045), transparent 24%),
+    radial-gradient(circle at 86% 76%, rgba(200,164,92,.13), transparent 30%),
+    rgba(255,248,242,.50);
+}
+
+.message-list:empty::before{
+  content:"還沒有留言，成為第一個送上祝福的人吧 ♡";
+  display:block;
+  margin:auto;
+  max-width:280px;
+  text-align:center;
+  font-family:'Noto Sans TC',sans-serif;
+  font-size:13px;
+  line-height:1.9;
+  color:rgba(64,51,47,.52);
+}
+
+.message-bubble{
+  width:100%;
+  display:grid;
+  grid-template-columns:38px 1fr;
+  gap:12px;
+  padding:17px 0;
+  border-bottom:1px solid rgba(200,164,92,.18);
+  animation:messageIn .35s ease;
+}
+
+.message-bubble:last-child{
+  border-bottom:0;
+}
+
+.message-icon{
+  width:38px;
+  height:38px;
+  border-radius:14px;
+  display:grid;
+  place-items:center;
+  background:rgba(255,255,255,.78);
+  border:1px solid rgba(200,164,92,.28);
+  box-shadow:0 8px 18px rgba(70,45,35,.06);
+  font-size:18px;
+}
+
+.message-content{
+  min-width:0;
+}
+
+.message-meta{
+  display:flex;
+  align-items:baseline;
+  gap:9px;
+  flex-wrap:wrap;
+  margin-bottom:6px;
+}
+
+.message-name{
+  font-family:'Noto Sans TC',sans-serif;
+  font-size:14px;
+  font-weight:700;
+  color:var(--rose);
+}
+
+.message-time{
+  font-family:'Noto Sans TC',sans-serif;
+  font-size:11.5px;
+  color:rgba(64,51,47,.46);
+}
+
+.message-text{
+  font-size:15px;
+  line-height:1.85;
+  color:var(--deep);
+  white-space:pre-wrap;
+  word-break:break-word;
+}
+
+.message-form{
+  display:grid;
+  grid-template-columns:1fr auto;
+  gap:10px;
+  padding:16px;
+  margin-top:0;
+  background:rgba(255,255,255,.80);
+  border-top:1px solid rgba(200,164,92,.22);
+}
+
+.message-form input{
+  grid-column:1 / -1;
+  width:100%;
+  border:1px solid rgba(200,164,92,.32);
+  border-radius:999px;
+  padding:11px 15px;
+  background:rgba(255,255,255,.88);
+  font-family:'Noto Sans TC',sans-serif;
+  font-size:14px;
+  color:var(--deep);
+  outline:none;
+}
+
+.message-form textarea{
+  width:100%;
+  height:46px;
+  min-height:46px;
+  max-height:96px;
+  border:1px solid rgba(200,164,92,.32);
+  border-radius:23px;
+  padding:12px 15px;
+  background:rgba(255,255,255,.88);
+  font-family:'Noto Sans TC',sans-serif;
+  font-size:14px;
+  color:var(--deep);
+  outline:none;
+  resize:none;
+}
+
+.message-form input:focus,
+.message-form textarea:focus{
+  border-color:rgba(140,31,40,.42);
+  box-shadow:0 0 0 3px rgba(140,31,40,.07);
+}
+
+.message-form button{
+  width:52px;
+  height:46px;
+  border:0;
+  border-radius:999px;
+  padding:0;
+  background:var(--rose);
+  color:white;
+  font-family:'Noto Sans TC',sans-serif;
+  font-size:0;
+  font-weight:700;
+  cursor:pointer;
+  box-shadow:0 10px 22px rgba(140,31,40,.18);
+  transition:transform .25s ease, box-shadow .25s ease;
+}
+
+.message-form button::before{
+  content:"➤";
+  font-size:18px;
+  line-height:46px;
+}
+
+.message-form button:hover{
+  transform:translateY(-1px);
+  box-shadow:0 13px 26px rgba(140,31,40,.22);
+}
+
+.message-toast{
+  position:fixed;
+  left:50%;
+  bottom:92px;
+  z-index:120;
+  transform:translateX(-50%) translateY(14px);
+  opacity:0;
+  pointer-events:none;
+  width:min(360px,86vw);
+  padding:14px 18px;
+  border-radius:22px;
+  text-align:center;
+  font-family:'Noto Sans TC',sans-serif;
+  font-size:14px;
+  line-height:1.7;
+  color:var(--deep);
+  background:rgba(255,255,255,.92);
+  border:1px solid rgba(200,164,92,.32);
+  box-shadow:0 18px 44px rgba(70,45,35,.14);
+  backdrop-filter:blur(14px);
+  transition:opacity .35s ease, transform .35s ease;
+}
+
+.message-toast.show{
+  opacity:1;
+  transform:translateX(-50%) translateY(0);
+}
+
+@keyframes messageIn{
+  from{opacity:0;transform:translateY(10px)}
+  to{opacity:1;transform:translateY(0)}
+}
+
+@media(max-width:760px){
+  .message-card{
+    max-width:92vw;
+    border-radius:30px;
+  }
+
+  .message-card-head{
+    align-items:flex-start;
+    flex-direction:column;
+    gap:10px;
+    padding:18px 18px 15px;
+  }
+
+  .message-list{
+    height:360px;
+    padding:8px 18px;
+  }
+
+  .message-bubble{
+    grid-template-columns:34px 1fr;
+    gap:10px;
+    padding:15px 0;
+  }
+
+  .message-icon{
+    width:34px;
+    height:34px;
+    border-radius:13px;
+    font-size:17px;
+  }
+
+  .message-text{
+    font-size:14.5px;
+  }
+}
+
 </style>
 </head>
 
@@ -2285,59 +2564,31 @@
     </div>
   </section>
 
-  <section class="section fade-up">
-    <h2 class="section-title">婚禮資訊</h2>
-    <div class="section-en">Wedding Info</div>
+  <section class="section fade-up blessings-section">
+    <h2 class="section-title">留下祝福</h2>
+    <div class="section-en">Guestbook</div>
+    <p class="section-sub">每一句祝福，都是我們故事裡很珍貴的一頁。</p>
 
-    <div class="info-card glass">
-      <div class="info-grid">
-        <article class="info-box">
-          <h3 class="venue-name">當天流程</h3>
-          <div class="schedule-list">
-            <div class="schedule-row">
-              <div class="schedule-time">17:00</div>
-              <div class="schedule-text">賓客入場</div>
-            </div>
-            <div class="schedule-row">
-              <div class="schedule-time">18:00</div>
-              <div class="schedule-text">開席</div>
-            </div>
-
-            <p class="schedule-note"> ♡ 歡迎提前來找我們玩 ♡</p>
-            
-          </div>
-          
-        </article>
-
-        <article class="info-box">
-          <h3 class="venue-name">維多麗亞酒店 1F 宴會廳</h3>
-          <div class="venue-address">台北市中山區敬業四路168號</div>
-          <div class="map-wrap">
-            <iframe
-              loading="lazy"
-              allowfullscreen
-              referrerpolicy="no-referrer-when-downgrade"
-              src="https://www.google.com/maps?q=%E7%B6%AD%E5%A4%9A%E9%BA%97%E4%BA%9E%E9%85%92%E5%BA%97%20%E5%8F%B0%E5%8C%97%E5%B8%82%E4%B8%AD%E5%B1%B1%E5%8D%80%E6%95%AC%E6%A5%AD%E5%9B%9B%E8%B7%AF168%E8%99%9F&output=embed">
-            </iframe>
-          </div>
-          <a class="map-link" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query=%E7%B6%AD%E5%A4%9A%E9%BA%97%E4%BA%9E%E9%85%92%E5%BA%97%20%E5%8F%B0%E5%8C%97%E5%B8%82%E4%B8%AD%E5%B1%B1%E5%8D%80%E6%95%AC%E6%A5%AD%E5%9B%9B%E8%B7%AF168%E8%99%9F">開啟 Google Map</a>
-
-          <div class="traffic-info">
-            <div class="traffic-item">
-              <strong>🚈 捷運</strong>
-              <p>搭乘捷運文湖線至劍南路站，從 3 號出口出站。</p>
-            </div>
-
-            <div class="traffic-item">
-              <strong>🚌 公車</strong>
-              <p>搭乘 28、222、247、267、268、內湖幹線(287)、620、646、72、902、紅2、藍7、藍26 等公車至美麗華站，步行約 3 分鐘。</p>
-            </div>
-          </div>
-        </article>
+    <div class="message-card glass">
+      <div class="message-card-head">
+        <div>
+          <div class="message-channel"># Tim-Aries-wedding</div>
+          <div class="message-head-title">幸福簽到簿</div>
+        </div>
+        <div class="message-count" id="messageCount">🤍 0 則祝福</div>
       </div>
-    </div>
-  </section>
 
+      <div class="message-list" id="messageList"></div>
+
+      <form class="message-form" id="messageForm">
+        <input id="guestName" type="text" placeholder="告訴我們你是誰" maxlength="20" required>
+        <textarea id="guestMessage" placeholder="寫下想對我們說的話..." maxlength="160" required></textarea>
+        <button type="submit">送出祝福</button>
+      </form>
+    </div>
+
+    <div class="message-toast" id="messageToast">🤍 謝謝你的祝福，它已經成為我們故事的一部分。</div>
+  </section>
 
   <section class="section fade-up">
     <div class="closing glass">
@@ -2350,6 +2601,7 @@
   <script>
     const weddingDate = new Date('2026-12-19T00:00:00+08:00').getTime();
     const loveStartDate = new Date('2024-02-09T00:00:00+08:00').getTime();
+    const MESSAGE_API_URL = "https://script.google.com/macros/s/AKfycbxiVsRDYYkM2Fqfyh2xWubZXCBR-YYkMywkMDTrC572XbdYTICQyJboxiLgFZUvioJp/exec";
 
     const fields = {
       days: document.getElementById('days'),
@@ -2466,6 +2718,142 @@
 
     syncChapterButtons();
 
+const messageList = document.getElementById("messageList");
+const messageForm = document.getElementById("messageForm");
+const guestName = document.getElementById("guestName");
+const guestMessage = document.getElementById("guestMessage");
+const messageCount = document.getElementById("messageCount");
+const messageToast = document.getElementById("messageToast");
+const blessingIcons = ["🌸", "🤍", "🕊️", "💐", "✨", "🌙", "🎉", "🌻", "🌞", "🧸"];
+
+function escapeHtml(value){
+  return String(value || "")
+    .replace(/&/g, "&amp;")
+    .replace(/</g, "&lt;")
+    .replace(/>/g, "&gt;")
+    .replace(/"/g, "&quot;")
+    .replace(/'/g, "&#039;");
+}
+
+function pickBlessingIcon(name, message){
+  const text = String(name || "") + String(message || "");
+  let total = 0;
+  for(let i = 0; i < text.length; i++) total += text.charCodeAt(i);
+  return blessingIcons[total % blessingIcons.length];
+}
+
+function formatMessageTime(value){
+  if(!value) return "剛剛";
+
+  const date = new Date(value);
+  if(Number.isNaN(date.getTime())) return "剛剛";
+
+  const now = new Date();
+  const diff = now - date;
+  const minute = 60 * 1000;
+  const hour = 60 * minute;
+  const day = 24 * hour;
+
+  if(diff < minute) return "剛剛";
+  if(diff < hour) return Math.floor(diff / minute) + " 分鐘前";
+  if(diff < day) return Math.floor(diff / hour) + " 小時前";
+
+  return date.toLocaleDateString("zh-TW", {
+    year:"numeric",
+    month:"2-digit",
+    day:"2-digit"
+  });
+}
+
+function updateMessageCount(){
+  if(!messageCount || !messageList) return;
+  const total = messageList.querySelectorAll(".message-bubble").length;
+  messageCount.textContent = `🩷 ${total} 則祝福`;
+}
+
+function showMessageToast(){
+  if(!messageToast) return;
+  messageToast.classList.add("show");
+  setTimeout(() => {
+    messageToast.classList.remove("show");
+  }, 2300);
+}
+
+function renderMessage(name, message, time){
+  if(!messageList) return;
+
+  const bubble = document.createElement("div");
+  bubble.className = "message-bubble";
+  bubble.innerHTML = `
+    <div class="message-icon">${pickBlessingIcon(name, message)}</div>
+    <div class="message-content">
+      <div class="message-meta">
+        <span class="message-name">${escapeHtml(name)}</span>
+        <span class="message-time">${escapeHtml(formatMessageTime(time))}</span>
+      </div>
+      <div class="message-text">${escapeHtml(message)}</div>
+    </div>
+  `;
+
+  messageList.appendChild(bubble);
+  messageList.scrollTop = messageList.scrollHeight;
+  updateMessageCount();
+}
+
+async function loadMessages(){
+  if(!messageList) return;
+
+  try{
+    const res = await fetch(MESSAGE_API_URL);
+    const messages = await res.json();
+
+    messageList.innerHTML = "";
+
+    messages.forEach(item => {
+      renderMessage(item.name, item.message, item.time);
+    });
+
+    updateMessageCount();
+  }catch(err){
+    console.error("留言讀取失敗：", err);
+  }
+}
+
+if(messageForm){
+  messageForm.addEventListener("submit", async function(e){
+    e.preventDefault();
+
+    const name = guestName.value.trim();
+    const message = guestMessage.value.trim();
+
+    if(!name || !message) return;
+
+    const now = new Date().toISOString();
+    renderMessage(name, message, now);
+    showMessageToast();
+
+    guestName.value = "";
+    guestMessage.value = "";
+
+    try{
+      await fetch(MESSAGE_API_URL, {
+        method: "POST",
+        mode: "no-cors",
+        headers: {
+          "Content-Type": "text/plain;charset=utf-8"
+        },
+        body: JSON.stringify({
+          name,
+          message
+        })
+      });
+    }catch(err){
+      console.error("留言送出失敗：", err);
+    }
+  });
+
+  loadMessages();
+}
 
     function createHeart(){
       if(document.body.classList.contains('locked')) return;

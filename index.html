@@ -1211,17 +1211,31 @@
 
     .gallery-grid{
       display:grid;
-      grid-template-columns:repeat(3,1fr);
+      grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
       gap:20px;
       max-width:840px;
       margin:0 auto;
     }
 
-    .gallery-grid .photo-placeholder{
-      aspect-ratio:3/4;
-      min-height:unset;
-      margin:0;
+    .gallery-photo{
+      overflow:hidden;
       border-radius:28px;
+      box-shadow:var(--shadow);
+      background:rgba(255,255,255,.62);
+      border:1px solid rgba(200,164,92,.28);
+    }
+
+    .gallery-photo img{
+      width:100%;
+      height:100%;
+      aspect-ratio:3/4;
+      object-fit:cover;
+      display:block;
+      transition:transform .35s ease;
+    }
+
+    .gallery-photo img:hover{
+      transform:scale(1.05);
     }
     
     .gallery-hint,
@@ -1782,7 +1796,7 @@
       .traffic-item p{font-size:13.5px}
       .gallery-grid{ display:flex; gap:16px;overflow-x:auto;overflow-y:hidden;scroll-snap-type:x mandatory;-webkit-overflow-scrolling:touch;padding-bottom:10px;}
       .gallery-grid::-webkit-scrollbar{display:none;}
-      .gallery-grid .photo-placeholder{flex:0 0 82%;aspect-ratio:3/4;scroll-snap-align:center;}
+      .gallery-photo{flex:0 0 82%;scroll-snap-align:center;}
       .gallery-hint{display:block;text-align:center;font-size:13px;color:rgba(64,51,47,.55);margin-bottom:18px;letter-spacing:.05em;}
       .schedule-row{grid-template-columns:74px 1fr}
       .story-hint{display:block;text-align:center;font-size:13px;color:rgba(64,51,47,.55);margin-bottom:18px;letter-spacing:.05em;}
@@ -2310,18 +2324,34 @@
   </section>
 
   <section class="section fade-up">
-    <h2 class="section-title">照片預留</h2>
+    <h2 class="section-title">怦然心動</h2>
     <div class="section-en">Gallery</div>
-    <p class="section-sub">之後可以放三張最想讓大家看到的婚紗照、日常照或求婚照。</p>
+    <p class="section-sub">每一次快門，都記錄著我們最真實的笑容。</p>
 
     <p class="gallery-hint">
     ← 左右滑動查看更多照片 →
   </p>
     
     <div class="gallery-grid">
-      <div class="photo-placeholder">PHOTO 01</div>
-      <div class="photo-placeholder">PHOTO 02</div>
-      <div class="photo-placeholder">PHOTO 03</div>
+      <div class="gallery-photo">
+        <img src="./gallery-01.jpg" alt="婚紗照 01">
+      </div>
+
+      <div class="gallery-photo">
+        <img src="./gallery-02.jpg" alt="婚紗照 02">
+      </div>
+
+      <div class="gallery-photo">
+        <img src="./gallery-03.jpg" alt="婚紗照 03">
+      </div>
+
+      <div class="gallery-photo">
+        <img src="./gallery-04.jpg" alt="婚紗照 04">
+      </div>
+
+      <div class="gallery-photo">
+        <img src="./gallery-05.jpg" alt="婚紗照 05">
+      </div>
     </div>
   </section>
 

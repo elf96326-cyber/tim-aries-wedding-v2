@@ -327,9 +327,7 @@
     }
 
     .enter-screen.opening .open-hint{
-      opacity:0;
-      transform:translateX(-50%) translateY(14px);
-      transition:opacity .25s ease, transform .25s ease;
+      display:none;
     }
 
     .enter-screen.opening .envelope{
@@ -1247,20 +1245,21 @@
     }
 
     .closing h2{
-      font-weight:400;
-      line-height:2;
-      letter-spacing:.08em;
-      font-size:clamp(22px,5vw,32px);
-      margin:0 0 18px;
-      color:var(--deep);
-    }
+  font-weight:400;
+  line-height:1.8;
+  letter-spacing:.06em;
+  font-size:clamp(17px,3.5vw,23px);
+  margin:0 0 18px;
+  color:var(--deep);
+}
 
     .closing p{
-      line-height:2;
-      color:rgba(64,51,47,.78);
-      font-weight:300;
-      margin:0;
-    }
+  font-size:14px;
+  line-height:2;
+  color:rgba(64,51,47,.78);
+  font-weight:300;
+  margin:0;
+}
 
     .music-note{
       font-family:'Noto Sans TC',sans-serif;
@@ -1506,7 +1505,7 @@
     .scroll-hint{
       position:absolute;
       left:50%;
-      top:calc(100% + 18px);
+      top:calc(100% - 60px);
       bottom:auto;
       transform:translateX(-50%);
       z-index:8;
@@ -1559,9 +1558,7 @@
     }
 
     .enter-screen.opening .scroll-hint{
-      opacity:0;
-      transform:translateX(-50%) translateY(10px);
-      pointer-events:none;
+      display:none;
     }
 
     @keyframes scrollFloat{
@@ -1580,7 +1577,7 @@
       .scroll-top-rod{top:128px;}
       .scroll-bottom-rod{top:154px;}
       .closed-emblem{top:142px;width:42px;height:42px;font-size:20px;}
-      .scroll-hint{top:calc(100% + 14px);bottom:auto;font-size:13px;padding:9px 14px;letter-spacing:.08em;}
+      .scroll-hint{top:calc(100% - 60px);bottom:auto;font-size:13px;padding:9px 14px;letter-spacing:.08em;}
       .scroll-content{padding:38px 20px 28px;gap:6px;}
       .scroll-seal{width:48px;height:48px;font-size:24px;}
       .scroll-kicker{font-size:10px;letter-spacing:.18em;}
@@ -2038,10 +2035,10 @@
         <div class="scroll-paper">
           <div class="scroll-content">
             <div class="scroll-seal">囍</div>
-            <div class="scroll-kicker">Wedding Invitation</div>
+            <div class="scroll-kicker">>A CELEBRATION OF LOVE</div>
             <div class="scroll-title">莊滿禛心</div>
             <div class="scroll-names">Tim & Aries</div>
-            <div class="scroll-date">2026.12.19 · Grand Victoria Hotel</div>
+            <div class="scroll-date">December 19, 2026<br>Grand Victoria Hotel</div>
           </div>
         </div>
 
@@ -2065,7 +2062,7 @@
     <div class="fade-up show hero-content">
       <span class="tag">OUR WEDDING DAY</span>
       <h1 class="names">Tim & Aries</h1>
-      <p class="subtitle">那時候的我們都不知道，<br>一個簡單的問題，會變成一輩子的陪伴。</p>
+      <p class="subtitle">有些相遇沒有預告，<br>卻成了最期待的未來。</p>
       <p class="theme">三生有幸，餘生有你</p>
       <p class="date">2026.12.19 · Grand Victoria Hotel</p>
       <div class="hero-photo"></div>
@@ -2076,7 +2073,7 @@
   <section class="section fade-up">
     <h2 class="section-title">戀愛天數</h2>
     <div class="section-en">Love Days</div>
-    <p class="section-sub">從 2024.02.09 那天開始，我們一起把日子過成故事。</p>
+    <p class="section-sub">從 2024.02.09 那天開始，<br>我們一起把日子過成故事。</p>
     <div class="love-card glass">
       <div class="love-watermark" aria-hidden="true"></div>
       <div class="love-label">WE HAVE BEEN IN LOVE FOR</div>
@@ -2142,7 +2139,7 @@
   <section class="section fade-up">
     <h2 class="section-title">我們的故事</h2>
     <div class="section-en">Our Story</div>
-    <p class="section-sub">把我們的故事收進三個章節裡，<br>想慢慢看的朋友，可以一頁一頁打開。</p>
+    <p class="section-sub">故事沒有劇本，<br>卻一步一步走成了今天的我們。</p>
 
     <p class="story-hint">
       ← 左右滑動閱讀故事 →
@@ -2173,13 +2170,13 @@
           <article class="story-item">
             <div class="story-date">2022.08.04</div>
             <div class="story-title">🌱  慢慢熟悉</div>
-            <p class="story-text">閒聊了一段時間後，發現我們彼此個性超級合，很快就變得很熟，某天我們就交換了 Line。那一天開始，我們的聊天不再只是工作，也慢慢走進了彼此的生活裡。</p>
+            <p class="story-text">閒聊了一段時間後，發現彼此個性超級合，很快就變得很熟，某天就交換了 Line。那一天開始，聊天不再只是工作，也慢慢走進了彼此的生活裡。</p>
           </article>
 
           <article class="story-item">
             <div class="story-date">2022.08.24</div>
             <div class="story-title">📷 靠近</div>
-            <p class="story-text">後來我們又交換了 IG，從限時動態到生活分享，慢慢認識了彼此工作以外的模樣。那些看似平凡的互動，也悄悄拉近了彼此的距離</p>
+            <p class="story-text">後來又交換了 IG，從限時動態到生活分享，慢慢認識了彼此工作以外的模樣。那些看似平凡的互動，也悄悄拉近了彼此的距離</p>
           </article>
         </div>
       </article>
@@ -2202,13 +2199,13 @@
           <article class="story-item">
             <div class="story-date">2024.01.27</div>
             <div class="story-title">🎵 心動的伏筆</div>
-            <p class="story-text">第一次就一起衝去高雄追 Super Junior！在演唱會的熱血與感動裡，留下了屬於我們的重要回憶。此時的我們還不知道，這次旅遊已在彼此心中留下了伏筆。</p>
+            <p class="story-text">第一次一起出去玩就衝去高雄追 Super Junior！在演唱會的熱血與感動裡，留下了屬於我們的重要回憶。此時的我們還不知道，這次旅遊已在彼此心中留下了伏筆。</p>
           </article>
 
           <article class="story-item">
             <div class="story-date">2024.02.02</div>
             <div class="story-title">🚗 陪伴</div>
-            <p class="story-text">陪著交新車，也陪著散散心。後來才發現，幸福有時候其實很簡單，就是有人願意在需要陪伴的時候，安靜地待在身邊。</p>
+            <p class="story-text">我陪你迎接新的開始，<br>你陪我告別舊的心情。後來才發現，幸福有時候其實很簡單，就是有人願意在需要陪伴的時候，安靜地待在身邊。</p>
           </article>
 
           <article class="story-item">
@@ -2343,8 +2340,8 @@
 
   <section class="section fade-up">
     <div class="closing glass">
-      <h2>原來最好的愛情，<br>是把平凡的日子過成故事。</h2>
-      <p>而故事最幸福的篇章，<br>想邀請你們一起見證。</p>
+      <h2>我們的故事還在繼續，<br>而這一次，想有你們一起見證。</h2>
+      <p>謝謝你們一路以來的陪伴，<br>也誠摯邀請你們，見證我們人生新的篇章。</p>
       <div class="music-note">2026.12.19，期待與你們相見</div>
     </div>
   </section>

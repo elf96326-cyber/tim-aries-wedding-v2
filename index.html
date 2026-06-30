@@ -940,17 +940,30 @@
       width:min(320px,98%);
       aspect-ratio:4/3;
       transform:rotate(-3deg);
+      
       border:8px solid rgba(255,255,255,.96);
       border-bottom-width:16px;
-      background:
-        linear-gradient(135deg,rgba(255,255,255,.76),rgba(248,242,232,.78)),
-        repeating-linear-gradient(45deg,rgba(200,164,92,.08) 0 1px,transparent 1px 12px);
+      
+      background-size:cover;
+      background-position:center;
+      background-repeat:no-repeat;
+      
       box-shadow:0 18px 32px rgba(70,45,35,.14);
-      display:grid;
-      place-items:center;
-      text-align:center;
       position:relative;
-    }
+      overflow:hidden;
+}
+      .chapter-photo-meet{
+    background-image:url("./story-meet.jpg");
+}
+
+.chapter-photo-love{
+    background-image:url("./story-love.jpg");
+}
+
+.chapter-photo-promise{
+    background-image:url("./story-promise.jpg");
+}
+
 
     .chapter-card:nth-child(2) .chapter-photo{transform:rotate(2.5deg)}
     .chapter-card:nth-child(3) .chapter-photo{transform:rotate(-1.5deg)}
@@ -965,24 +978,6 @@
       transform:translateX(-50%) rotate(2deg);
       background:rgba(200,164,92,.24);
       box-shadow:0 4px 10px rgba(70,45,35,.08);
-    }
-
-    .chapter-photo span{
-      font-family:'Noto Sans TC',sans-serif;
-      font-size:13px;
-      letter-spacing:.18em;
-      color:rgba(64,51,47,.55);
-    }
-
-    .chapter-photo small{
-      position:absolute;
-      left:0;
-      right:0;
-      bottom:-23px;
-      font-family:'Noto Sans TC',sans-serif;
-      font-size:11px;
-      letter-spacing:.08em;
-      color:rgba(140,31,40,.45);
     }
 
     .chapter-main{
@@ -1948,7 +1943,7 @@
       }
 
       .profile-card:nth-child(even) .profile-figure{
-        left:-35px !important;
+        left:-45px !important;
         right:auto !important;
       }
 
@@ -2158,10 +2153,7 @@
         <button class="chapter-head" type="button" aria-expanded="false">
           
           <div class="chapter-visual">
-            <div class="chapter-photo">
-              <span>PHOTO</span>
-              <small>相遇照片預留</small>
-            </div>
+            <div class="chapter-photo chapter-photo-meet"></div>
           </div>
           <div class="chapter-main">
             <div class="chapter-kicker">CHAPTER 1</div>
@@ -2196,10 +2188,7 @@
         <button class="chapter-head" type="button" aria-expanded="false">
           
           <div class="chapter-visual">
-            <div class="chapter-photo">
-              <span>PHOTO</span>
-              <small>靠近照片預留</small>
-            </div>
+            <div class="chapter-photo chapter-photo-love"></div>
           </div>
           <div class="chapter-main">
             <div class="chapter-kicker">CHAPTER 2</div>
@@ -2234,10 +2223,7 @@
         <button class="chapter-head" type="button" aria-expanded="false">
           
           <div class="chapter-visual">
-            <div class="chapter-photo">
-              <span>PHOTO</span>
-              <small>約定照片預留</small>
-            </div>
+            <div class="chapter-photo chapter-photo-promise"></div>
           </div>
           <div class="chapter-main">
             <div class="chapter-kicker">CHAPTER 3</div>
